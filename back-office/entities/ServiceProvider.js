@@ -1,7 +1,7 @@
 'use strict';
 
 var path = require('path'),
-	persistence = require(path.join(__dirname, '../middlewares/persistence'));
+		persistence = require(path.join(__dirname, '../middlewares/persistence'));
 
 var ServiceProviderSchema = new persistence.mongoose.Schema({
 	login: { type: String, unique: true },
