@@ -1,7 +1,7 @@
 'use strict';
 
- var  path = require('path'),
-     serviceServiceProviders = require(path.join(__dirname, '../services/serviceProviders'));
+var path = require('path'),
+    serviceServiceProviders = require(path.join(__dirname, '../services/serviceProviders'));
 
 exports.get = function () {
   return [

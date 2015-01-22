@@ -34,7 +34,7 @@ exports.load = function (app) {
               app.delete(route.url, route.service);
               break;
           }
-        );
+        })
       }
     });
   });
