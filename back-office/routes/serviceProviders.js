@@ -9,6 +9,11 @@ exports.get = function () {
       url: '/serviceProviders',
       verb: 'GET',
       service: serviceServiceProviders.getAll
+    },
+    {
+      url: '/serviceProvider',
+      verb: 'POST',
+      service: serviceServiceProviders.addOrUpdate
     }
   ];
 };

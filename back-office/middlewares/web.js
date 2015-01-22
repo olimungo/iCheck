@@ -9,7 +9,7 @@ var path = require('path'),
 exports.config = function (app) {
   app.use(compress());
   app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.urlencoded({ extended: false }));
   app.use(serveStatic(path.join(__dirname, '../www')));
   app.use(responseHeaders.add());
 };
