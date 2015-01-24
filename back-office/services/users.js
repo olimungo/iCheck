@@ -5,14 +5,19 @@ var DEFAULT_PASSWORD = 'e047287a9d4b38f3c6391f24522eee26'; // changeItImmediatel
 var path = require('path'),
     User = require(path.join(__dirname, '../entities/User'))
 
-exports.authenticate = function (req, res) {
+exports.authenticate = function (credentials, callback) {
   var result = { error: null, value: null };
 
-  User.find({}, function (error, users) {
-    result.error = error;
-    result.value = users;
+  User.findOne({ 'login': credentials.login }, function (error, user) {
+    if (error) {
+      result.error = error;
+    } else if (user === null || credentials.password !== user.password) {
+      result.error = 'Invalid user/password';
+    } else {
+      result.value = user;
+    }
 
-    res.send(result);
+    callback(result);
   });
 };
 
@@ -27,12 +32,25 @@ exports.getAll = function (req, res) {
   });
 };
 
-exports.addOrUpdate = function (req, res) {
+exports.add = function (req, res) {
   var result = { error: null, value: null };
 
-  User.create(req.body, function (error, user) {
+  req.body.roles = [ Roles.OFFICIAL ];
+
+  User.create(req.body, function (error, serviceProvider) {
     result.error = error;
-    result.value = user;
+    result.value = serviceProvider;
+
+    res.send(result);
+  });
+};
+
+exports.count = function (req, res) {
+  var result = { error: null, value: null };
+
+  User.count({}, function (error, count) {
+    result.error = error;
+    result.value = count;
 
     res.send(result);
   });

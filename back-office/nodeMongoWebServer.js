@@ -1,5 +1,4 @@
 // Root file: used to launch the nodejs process and start up a web server.
-// Secured routes have to be requested via a POST request.
 //
 // Format of the requests:
 //    {
@@ -8,6 +7,9 @@
 //		}
 //
 // Passwords have to be hashed with md5.
+// There's an exception for GET requests because they have no body. On the other hand, they cannot be secured.
+// Secured routes have to be requested via a POST, PUT or DELETE request.
+// Requests must contain the following header: Content-Type : application-json
 //
 // Format of the responses:
 //    {

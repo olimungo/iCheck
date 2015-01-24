@@ -1,23 +1,26 @@
 'use strict';
 
 var path = require('path'),
-    ServiceProvider = require(path.join(__dirname, '../entities/ServiceProvider'))
+    Roles = require(path.join(__dirname, '../codes/Roles')),
+    User = require(path.join(__dirname, '../entities/User'));
 
 exports.getAll = function (req, res) {
   var result = { error: null, value: null };
 
-  User.find({}, function (error, users) {
+  User.find({ roles: Roles.SERVICE_PROVIDER }, function (error, serviceProviders) {
     result.error = error;
-    result.value = users;
+    result.value = serviceProviders;
 
     res.send(result);
   });
 };
 
-exports.addOrUpdate = function (req, res) {
+exports.add = function (req, res) {
   var result = { error: null, value: null };
 
-  ServiceProvider.create(req.body, function (error, serviceProvider) {
+  req.body.roles = [ Roles.SERVICE_PROVIDER ];
+
+  User.create(req.body, function (error, serviceProvider) {
     result.error = error;
     result.value = serviceProvider;
 

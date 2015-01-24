@@ -8,9 +8,16 @@ exports.get = function () {
   return [
     {
       url: '/users',
-      verb: 'GET',
+      verb: 'POST',
       roles: [ Roles.ADMIN ],
       service: serviceUsers.getAll
+    },
+    // Just to test an unsecured route
+    {
+      url: '/users/count',
+      verb: 'GET',
+      roles: [],
+      service: serviceUsers.count
     }
   ];
 };

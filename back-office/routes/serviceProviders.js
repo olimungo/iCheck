@@ -7,10 +7,16 @@ var path = require('path'),
 exports.get = function () {
   return [
     {
+      url: '/serviceProviders',
+      verb: 'POST',
+      roles: [ Roles.ADMIN ],
+      service: serviceServiceProviders.getAll
+    },
+    {
       url: '/serviceProvider',
       verb: 'POST',
       roles: [ Roles.ADMIN ],
-      service: serviceServiceProviders.addOrUpdate
+      service: serviceServiceProviders.add
     }
   ];
 };
