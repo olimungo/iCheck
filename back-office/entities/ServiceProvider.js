@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path'),
+		User = require(path.join(__dirname, '../entities/User')),
 		persistence = require(path.join(__dirname, '../middlewares/persistence'));
 
 var log = new persistence.mongoose.Schema({
@@ -19,10 +20,6 @@ var log = new persistence.mongoose.Schema({
   comment: String
 });
 
-var ServiceProviderSchema = new persistence.mongoose.Schema({
-	login: { type: String, unique: true },
-	password: String,
-	logs: [ log ]
-});
+User.Schema.add({ logs: [ log ] });
 
-module.exports = persistence.mongoose.model('ServiceProvider', ServiceProviderSchema);
+module.exports = persistence.mongoose.model('Users', User.Schema);
