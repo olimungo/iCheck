@@ -18,12 +18,20 @@ exports.getAll = function (req, res) {
 exports.add = function (req, res) {
   var result = { error: null, value: null };
 
-  req.body.roles = [ Roles.SERVICE_PROVIDER ];
+  if (req.body.hasOwnProperty('value')) {
+    req.body.value.roles = [ Roles.SERVICE_PROVIDER ];
 
-  User.create(req.body, function (error, serviceProvider) {
-    result.error = error;
-    result.value = serviceProvider;
+    User.create(req.body.value, function (error, serviceProvider) {
+      if (error) {
+        result.error = error.toString();
+      } else {
+        result.value = serviceProvider;
+      }
 
+      res.send(result);
+    });
+  } else {
+    result.error = 'Missing properties in request';
     res.send(result);
-  });
+  }
 };

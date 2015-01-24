@@ -7,7 +7,7 @@ var path = require('path'),
 exports.getAll = function (req, res) {
   var result = { error: null, value: null };
 
-  User.find({ roles: Roles.OFFICIALS }, function (error, officials) {
+  User.find({ roles: Roles.OFFICIAL }, function (error, officials) {
     result.error = error;
     result.value = officials;
 
@@ -18,60 +18,123 @@ exports.getAll = function (req, res) {
 exports.add = function (req, res) {
   var result = { error: null, value: null };
 
-  req.body.roles = [ Roles.OFFICIALS ];
+  if (req.body.hasOwnProperty('value')) {
+    req.body.value.roles = [ Roles.OFFICIALS ];
 
-  User.create(req.body, function (error, official) {
-    result.error = error;
-    result.value = official;
+    User.create(req.body.value, function (error, official) {
+      result.error = error;
+      result.value = official;
 
+      res.send(result);
+    });
+  } else {
+    result.error = 'Missing properties in request';
     res.send(result);
-  });
+  }
 };
 
 exports.isAdmin = function (req, res) {
   var result = { error: null, value: null },
-      l, i, role,
       indexAdminRole = -1,
       save = false;
 
-  User.findOne({ login: req.body.value.login }, function (error, official) {
-    if (official !== null) {
-      l = official.roles.length;
-      for(i=0; i < l; i++) {
-        role = official.roles[i];
+  if (req.body.hasOwnProperty('value') && req.body.value.hasOwnProperty('login') && req.body.value.hasOwnProperty('isAdmin')) {
+    User.findOne({ login: req.body.value.login }, function (error, official) {
+      if (official !== null) {
+        var l = official.roles.length;
+        for(var i=0; i < l; i++) {
+          var role = official.roles[i];
 
-        if (role === Roles.ADMIN) {
-          indexAdminRole = i;
-          break;
+          if (role === Roles.ADMIN) {
+            indexAdminRole = i;
+            break;
+          }
         }
-      }
 
-      if (req.body.value.isAdmin) {
-        // Add ADMIN if not yet in the array
-        if (indexAdminRole === -1) {
-          official.roles.push(Roles.ADMIN);
-          save = true;
+        if (req.body.value.isAdmin) {
+          // Add ADMIN if not yet in the array
+          if (indexAdminRole === -1) {
+            official.roles.push(Roles.ADMIN);
+            save = true;
+          }
+        } else {
+          // Remove ADMIN if in the array
+          if (indexAdminRole > -1) {
+            official.roles.splice(indexAdminRole, 1);
+            save = true;
+          }
         }
-      } else {
-        // Remove ADMIN if in the array
-        if (indexAdminRole > -1) {
-          official.roles.splice(indexAdminRole, 1);
-          save = true;
-        }
-      }
 
-      if (save) {
-        official.save(function (error, official) {
+        if (save) {
+          official.save(function (error, official) {
+            result.value = official;
+            res.send(result);
+          });
+        } else {
           result.value = official;
           res.send(result);
-        });
+        }
       } else {
-        result.value = official;
+        result.error = 'Official not found';
         res.send(result);
       }
+    });
+  } else {
+    result.error = 'Missing properties in request';
+    res.send(result);
+  }
+};
+
+exports.assignServiceProvider = function (req, res) {
+  var result = { error: null, value: null },
+      indexServiceProvider = -1;
+
+  if (req.body.hasOwnProperty('value')) {
+    var value = req.body.value;
+
+    if (value.hasOwnProperty('officialLogin') && value.hasOwnProperty('serviceProviderLogin')) {
+      User.findOne({ login: value.officialLogin, roles: Roles.OFFICIAL }, function (error, official) {
+        if (official !== null) {
+          var l = official.serviceProviders.length;
+          for(var i=0; i < l; i++) {
+            var serviceProvider = official.serviceProviders[i];
+
+            if (serviceProvider === value.serviceProviderLogin) {
+              indexServiceProvider = i;
+              break;
+            }
+          }
+
+          User.findOne({ login: value.serviceProviderLogin, roles: Roles.SERVICE_PROVIDER }, function (error, serviceProvider) {
+            if (serviceProvider !== null) {
+              // Add service provider if not yet in the array
+              if (indexServiceProvider === -1) {
+                official.serviceProviders.push(value.serviceProviderLogin);
+
+                official.save(function (error, official) {
+                  result.value = official;
+                  res.send(result);
+                });
+              } else {
+                result.value = official;
+                res.send(result);
+              }
+            } else {
+              result.error = 'Service Provider not found';
+              res.send(result);              
+            }
+          });
+        } else {
+          result.error = 'Official not found';
+          res.send(result);
+        }
+      });
     } else {
-      result.error = 'Official not found';
+      result.error = 'Missing properties in request';
       res.send(result);
     }
-  });
+  } else {
+      result.error = 'Missing properties in request';
+      res.send(result); 
+  }
 };

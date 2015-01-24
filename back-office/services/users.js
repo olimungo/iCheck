@@ -32,19 +32,6 @@ exports.getAll = function (req, res) {
   });
 };
 
-exports.add = function (req, res) {
-  var result = { error: null, value: null };
-
-  req.body.roles = [ Roles.OFFICIAL ];
-
-  User.create(req.body, function (error, serviceProvider) {
-    result.error = error;
-    result.value = serviceProvider;
-
-    res.send(result);
-  });
-};
-
 exports.count = function (req, res) {
   var result = { error: null, value: null };
 

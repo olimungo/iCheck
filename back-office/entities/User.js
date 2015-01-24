@@ -25,9 +25,22 @@ var UserEntity = {
 	firstName: String,
 	lastName: String,
 	roles: [ String ],
+	serviceProviders: [ String ],
 	logs: [ LogEntity ]
 };
 
 var UserSchema = new persistence.mongoose.Schema(UserEntity);
+
+UserSchema.pre('save', function (next) {
+  if (this.login === null || this.login === '') {
+  	return next(new Error('Login cannot be blank'));
+  }
+
+  if (this.password === null || this.password === '') {
+  	return next(new Error('Password cannot be blank'));
+  }
+
+  next();
+});
 
 module.exports = persistence.mongoose.model('Users', UserSchema);

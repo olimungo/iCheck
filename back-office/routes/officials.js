@@ -23,6 +23,12 @@ exports.get = function () {
       verb: 'POST',
       roles: [ Roles.ADMIN ],
       service: serviceOfficials.isAdmin
+    },
+    {
+      url: '/official/serviceProvider',
+      verb: 'POST',
+      roles: [ Roles.ADMIN ],
+      service: serviceOfficials.assignServiceProvider
     }
   ];
 };
