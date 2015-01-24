@@ -8,7 +8,10 @@ exports.getAll = function (req, res) {
   var result = { error: null, value: null };
 
   User.find({ roles: Roles.OFFICIAL }, function (error, officials) {
-    result.error = error;
+    if (error) {
+      result.error = error.toString();
+    }
+    
     result.value = officials;
 
     res.send(result);
@@ -18,11 +21,15 @@ exports.getAll = function (req, res) {
 exports.add = function (req, res) {
   var result = { error: null, value: null };
 
-  if (req.body.hasOwnProperty('value')) {
-    req.body.value.roles = [ Roles.OFFICIALS ];
+  if (req.body.hasOwnProperty('value') && req.body.value.hasOwnProperty('login')) {
+    req.body.value.roles = [ Roles.OFFICIAL ];
+    req.body.value.password = User.DEFAULT_PASSWORD;
 
     User.create(req.body.value, function (error, official) {
-      result.error = error;
+      if (error) {
+        result.error = error.toString();
+      }
+
       result.value = official;
 
       res.send(result);
@@ -39,7 +46,7 @@ exports.isAdmin = function (req, res) {
       save = false;
 
   if (req.body.hasOwnProperty('value') && req.body.value.hasOwnProperty('login') && req.body.value.hasOwnProperty('isAdmin')) {
-    User.findOne({ login: req.body.value.login }, function (error, official) {
+    User.findOne({ login: req.body.value.login, roles: Roles.OFFICIAL }, function (error, official) {
       if (official !== null) {
         var l = official.roles.length;
         for(var i=0; i < l; i++) {
@@ -85,9 +92,10 @@ exports.isAdmin = function (req, res) {
   }
 };
 
-exports.assignServiceProvider = function (req, res) {
+function _assignOrUnassignServiceProvider (req, res) {
   var result = { error: null, value: null },
-      indexServiceProvider = -1;
+      indexServiceProvider = -1,
+      save = false;
 
   if (req.body.hasOwnProperty('value')) {
     var value = req.body.value;
@@ -107,10 +115,21 @@ exports.assignServiceProvider = function (req, res) {
 
           User.findOne({ login: value.serviceProviderLogin, roles: Roles.SERVICE_PROVIDER }, function (error, serviceProvider) {
             if (serviceProvider !== null) {
-              // Add service provider if not yet in the array
-              if (indexServiceProvider === -1) {
-                official.serviceProviders.push(value.serviceProviderLogin);
+              if (req.assign) {
+                // Add service provider if not yet in the array
+                if (indexServiceProvider === -1) {
+                  official.serviceProviders.push(value.serviceProviderLogin);
+                  save = true;
+                }
+              } else {
+                // Remove service provider if in the array
+                if (indexServiceProvider !== -1) {
+                  official.serviceProviders.splice(indexServiceProvider, 1);
+                  save = true;
+                }
+              }
 
+              if (save) {
                 official.save(function (error, official) {
                   result.value = official;
                   res.send(result);
@@ -118,7 +137,7 @@ exports.assignServiceProvider = function (req, res) {
               } else {
                 result.value = official;
                 res.send(result);
-              }
+              }         
             } else {
               result.error = 'Service Provider not found';
               res.send(result);              
@@ -137,4 +156,14 @@ exports.assignServiceProvider = function (req, res) {
       result.error = 'Missing properties in request';
       res.send(result); 
   }
+};
+
+exports.assignServiceProvider = function (req, res) {
+  req.assign = true;
+  _assignOrUnassignServiceProvider(req, res);
+};
+
+exports.unassignServiceProvider = function (req, res) {
+  req.assign = false;
+  _assignOrUnassignServiceProvider(req, res);
 };

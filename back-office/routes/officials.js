@@ -25,10 +25,16 @@ exports.get = function () {
       service: serviceOfficials.isAdmin
     },
     {
-      url: '/official/serviceProvider',
+      url: '/official/serviceProvider/assign',
       verb: 'POST',
       roles: [ Roles.ADMIN ],
       service: serviceOfficials.assignServiceProvider
+    },
+    {
+      url: '/official/serviceProvider/unassign',
+      verb: 'POST',
+      roles: [ Roles.ADMIN ],
+      service: serviceOfficials.unassignServiceProvider
     }
   ];
 };

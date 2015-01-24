@@ -44,3 +44,5 @@ UserSchema.pre('save', function (next) {
 });
 
 module.exports = persistence.mongoose.model('Users', UserSchema);
+
+module.exports.DEFAULT_PASSWORD = 'e047287a9d4b38f3c6391f24522eee26'; // changeItImmediately

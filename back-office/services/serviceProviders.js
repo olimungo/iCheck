@@ -8,7 +8,10 @@ exports.getAll = function (req, res) {
   var result = { error: null, value: null };
 
   User.find({ roles: Roles.SERVICE_PROVIDER }, function (error, serviceProviders) {
-    result.error = error;
+    if (error) {
+      result.error = error.toString();
+    }
+    
     result.value = serviceProviders;
 
     res.send(result);
@@ -18,8 +21,9 @@ exports.getAll = function (req, res) {
 exports.add = function (req, res) {
   var result = { error: null, value: null };
 
-  if (req.body.hasOwnProperty('value')) {
+  if (req.body.hasOwnProperty('value') && req.body.value.hasOwnProperty('login')) {
     req.body.value.roles = [ Roles.SERVICE_PROVIDER ];
+    req.body.value.password = User.DEFAULT_PASSWORD;
 
     User.create(req.body.value, function (error, serviceProvider) {
       if (error) {
