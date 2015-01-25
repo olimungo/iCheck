@@ -1,0 +1,24 @@
+<div class="sp-home" layout="column" layout-align="center center">
+  <div class="container">
+    <md-content class="md-padding clock" layout="column" layout-align="center center">
+      <div class="clock-date">{{ clock  | date:'d MMMM yyyy'}}</div>
+      <div class="clock-hour">{{ clock  | date:'H:mm'}}</div>
+    </md-content>
+
+    <md-content class="md-padding">
+      <md-input-container flex>
+        <label>Login</label>
+        <input ng-model="user.firstName">
+      </md-input-container>
+
+      <md-input-container flex>
+        <label>Signature</label>
+        <input ng-model="theMax">
+      </md-input-container>
+
+      <md-input-container layout-align="center">
+        <md-button class="md-raised md-primary">Check</md-button>
+      </md-input-container>
+    </md-content>
+  </div>
+</div>
