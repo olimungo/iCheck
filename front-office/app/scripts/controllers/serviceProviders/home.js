@@ -10,8 +10,7 @@ angular.module('frontOfficeApp')
         $timeout(tick, $scope.tickInterval); // reset the timer
     }
 
-    // Start the timer
-    $timeout(tick, $scope.tickInterval);
+    tick();
 
   $scope.user = {
     title: 'Developer',

@@ -1,10 +1,14 @@
 .sp-home .container {
-  margin-top: 100px;
+  margin-top: 20px;
   width: 250px;
 }
 
-.sp-home .clock {
+.sp-home .clock-icon {
+  color: #ddd;
+  font-size: 50px;
+}
 
+.sp-home .clock {
 }
 
 .sp-home .clock-date {
@@ -13,8 +17,8 @@
 }
 
 .sp-home .clock-hour {
-  color: #555;
-  font-size: 50px;
+  color: #777;
+  font-size: 70px;
 }
 
 .tabsdemoStaticTabs {
