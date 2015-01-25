@@ -13,16 +13,10 @@ exports.get = function () {
       service: serviceUsers.getAll
     },
     {
-      url: '/users/password',
+      url: '/user/password',
       verb: 'POST',
-      roles: [ Roles.OFFICIAL, Roles.SERVICE_PROVIDER ],
+      roles: [ Roles.ADMIN, Roles.OFFICIAL, Roles.SERVICE_PROVIDER ],
       service: serviceUsers.changePassword
-    },
-    {
-      url: '/users/password/reset',
-      verb: 'POST',
-      roles: [ Roles.ADMIN ],
-      service: serviceUsers.resetPassword
     },
     // Just to test an unsecured route
     {
