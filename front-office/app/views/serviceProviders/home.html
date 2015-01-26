@@ -1,28 +1,49 @@
-<div class="sp-home" layout="column" layout-align="center center">
+<div class="check" layout="column" layout-align="center center">
   <div class="container">
-    <md-content class="md-padding clock" layout="column" layout-align="center center">
-      <i class="fa fa-clock-o clock-icon"></i>
-    </md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <span><i class="fa fa-clock-o clock-icon"></i>iCheck</span>
+        <div flex></div>
+        <md-button class="md-accent-hue-1"><i class="fa fa-sign-out sign-out-icon"></i></md-button>
+      </div>
+    </md-toolbar>
 
-    <md-content class="md-padding clock" layout="column" layout-align="center center">
-      <div class="clock-date">{{ clock  | date:'d MMMM yyyy'}}</div>
-      <div class="clock-hour">{{ clock  | date:'H:mm'}}</div>
-    </md-content>
+    <md-content>
+      <div class="tabsdemoDynamicTabs">
+        <md-tabs md-selected="selectedIndex" class="md-hue-2">
+          <md-tab label="Check">
+            <div class="demo-tab tab1" layout="column" layout-fill layout-align="space-around center">
+              <div class="slide-animate" ng-include="'views/serviceProviders/check.html'"></div>
+            </div>
+          </md-tab>
 
-    <md-content class="md-padding">
-      <md-input-container flex>
-        <label>Login</label>
-        <input ng-model="user.login">
-      </md-input-container>
+          <md-tab label="Week">
+            <div class="demo-tab tab1" layout="column" layout-fill layout-align="space-around center">
+              <div>Week</div>
+            </div>
+          </md-tab>
 
-      <md-input-container flex>
-        <label>Signature</label>
-        <input ng-model="user.password">
-      </md-input-container>
+          <md-tab label="Month">
+            <div class="demo-tab tab1" layout="column" layout-fill layout-align="space-around center">
+              <div>Month</div>
+            </div>
+          </md-tab>
 
-      <md-input-container layout-align="center">
-        <md-button class="md-raised md-primary" ng-click="home2()">Check</md-button>
-      </md-input-container>
+          <md-tab label="Comments">
+            <div class="demo-tab tab1" layout="column" layout-fill layout-align="space-around center">
+              <div>Comments</div>
+            </div>
+          </md-tab>
+        </md-tabs>
+
+        <md-button class="md-warn md-fab add-button">
+          <i class="fa fa-plus add-icon"></i>
+        </md-button>
+
+        <div layout="row" layout-sm="column" layout-margin layout-align="left center">
+          <md-text-float label="Active Index" ng-model="selectedIndex" disabled></md-text-float>
+        </div>
+      </div>
     </md-content>
   </div>
 </div>

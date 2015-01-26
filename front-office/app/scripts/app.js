@@ -13,15 +13,14 @@ angular.module('frontOfficeApp', [ 'ngAnimate', 'ngCookies', 'ngMessages',
 )
 .config(function ($routeProvider) {
   $routeProvider
-    .when('/serviceProviders/home', {
-      templateUrl: 'views/serviceProviders/home.html',
-      controller: 'ServiceProvidersHomeCtrl'
+    .when('/serviceProviders/log', {
+      templateUrl: 'views/serviceProviders/log.html',
+      controller: 'ServiceProvidersLogCtrl'
     })
-    .when('/serviceProviders/check', {
-      templateUrl: 'views/serviceProviders/check.html',
-      controller: 'ServiceProvidersHomeCtrl'
+    .when('/serviceProviders/home', {
+      templateUrl: 'views/serviceProviders/home.html'
     })
     .otherwise({
-      redirectTo: '/serviceProviders/home'
+      redirectTo: '/serviceProviders/log'
     });
 });

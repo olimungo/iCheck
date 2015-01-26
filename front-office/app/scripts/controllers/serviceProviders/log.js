@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontOfficeApp')
-.controller('ServiceProvidersHomeCtrl', function ($scope, $timeout, $location) {
+.controller('ServiceProvidersLogCtrl', function ($scope, $timeout, $location) {
   $scope.clock = '';
   $scope.tickInterval = 5000;
 
@@ -14,9 +14,5 @@ angular.module('frontOfficeApp')
 
   $scope.home = function () {
     $location.path('/serviceProviders/home');
-  };
-
-  $scope.home2 = function () {
-    $location.path('/serviceProviders/check');
   };
 });
