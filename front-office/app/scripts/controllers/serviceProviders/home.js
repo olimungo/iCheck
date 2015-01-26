@@ -1,27 +1,22 @@
 'use strict';
 
 angular.module('frontOfficeApp')
-.controller('ServiceProvidersHomeCtrl', function ($scope, $timeout) {
-    $scope.clock = '';
-    $scope.tickInterval = 5000;
+.controller('ServiceProvidersHomeCtrl', function ($scope, $timeout, $location) {
+  $scope.clock = '';
+  $scope.tickInterval = 5000;
 
-    var tick = function() {
-        $scope.clock = Date.now() // get the current time
-        $timeout(tick, $scope.tickInterval); // reset the timer
-    }
+  var tick = function() {
+      $scope.clock = Date.now() // get the current time
+      $timeout(tick, $scope.tickInterval); // reset the timer
+  }
 
-    tick();
+  tick();
 
-  $scope.user = {
-    title: 'Developer',
-    email: 'ipsum@lorem.com',
-    firstName: '',
-    lastName: '' ,
-    company: 'Google' ,
-    address: '1600 Amphitheatre Pkwy' ,
-    city: 'Mountain View' ,
-    state: 'CA' ,
-    biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
-    postalCode : '94043'
+  $scope.home = function () {
+    $location.path('/serviceProviders/home');
+  };
+
+  $scope.home2 = function () {
+    $location.path('/serviceProviders/home2');
   };
 });

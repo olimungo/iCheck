@@ -12,16 +12,16 @@
     <md-content class="md-padding">
       <md-input-container flex>
         <label>Login</label>
-        <input ng-model="user.firstName">
+        <input ng-model="user.login">
       </md-input-container>
 
       <md-input-container flex>
         <label>Signature</label>
-        <input ng-model="theMax">
+        <input ng-model="user.password">
       </md-input-container>
 
       <md-input-container layout-align="center">
-        <md-button class="md-raised md-primary">Check</md-button>
+        <md-button class="md-raised md-primary" ng-click="home2()">Check</md-button>
       </md-input-container>
     </md-content>
   </div>

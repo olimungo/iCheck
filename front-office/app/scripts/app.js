@@ -17,6 +17,10 @@ angular.module('frontOfficeApp', [ 'ngAnimate', 'ngCookies', 'ngMessages',
       templateUrl: 'views/serviceProviders/home.html',
       controller: 'ServiceProvidersHomeCtrl'
     })
+    .when('/serviceProviders/home2', {
+      templateUrl: 'views/serviceProviders/home2.html',
+      controller: 'ServiceProvidersHomeCtrl'
+    })
     .otherwise({
       redirectTo: '/serviceProviders/home'
     });
