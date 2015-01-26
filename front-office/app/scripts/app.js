@@ -17,8 +17,8 @@ angular.module('frontOfficeApp', [ 'ngAnimate', 'ngCookies', 'ngMessages',
       templateUrl: 'views/serviceProviders/home.html',
       controller: 'ServiceProvidersHomeCtrl'
     })
-    .when('/serviceProviders/home2', {
-      templateUrl: 'views/serviceProviders/home2.html',
+    .when('/serviceProviders/check', {
+      templateUrl: 'views/serviceProviders/check.html',
       controller: 'ServiceProvidersHomeCtrl'
     })
     .otherwise({

@@ -17,6 +17,6 @@ angular.module('frontOfficeApp')
   };
 
   $scope.home2 = function () {
-    $location.path('/serviceProviders/home2');
+    $location.path('/serviceProviders/check');
   };
 });

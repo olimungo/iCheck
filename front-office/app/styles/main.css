@@ -21,6 +21,25 @@
   font-size: 70px;
 }
 
+.check .container {
+  width: 600px;
+}
+
+.check .clock-icon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.check .sign-out-icon {
+  font-size: 25px;
+  width: 40px;
+}
+
+.check .content {
+  margin: 50px;
+  min-height: 100px;
+}
+
 .reveal-animation.ng-enter {
   overflow-y: hidden;
   margin-top: 200px;
@@ -45,4 +64,46 @@
 .reveal-animation.ng-leave.ng-leave-active {
   height: 0;
   opacity: 0;
+}
+
+.tabsdemoDynamicTabs .demo-tab {
+  height: 500px;
+  text-align: center; }
+.tabsdemoDynamicTabs .tab1 {
+  background-color: #bbdefb; }
+.tabsdemoDynamicTabs .md-header {
+  background-color: #1976D2 !important; }
+.tabsdemoDynamicTabs md-tab {
+  color: #90caf9 !important; }
+.tabsdemoDynamicTabs md-tab.active, .tabsdemoDynamicTabs md-tab:focus {
+  color: white !important; }
+.tabsdemoDynamicTabs md-tab[disabled] {
+  opacity: 0.5; }
+.tabsdemoDynamicTabs .md-header .md-ripple {
+  border-color: #FFFF8D !important; }
+.tabsdemoDynamicTabs md-tabs-ink-bar {
+  background-color: #FFFF8D !important; }
+.tabsdemoDynamicTabs .title {
+  padding-top: 8px;
+  padding-right: 8px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 24px; }
+.tabsdemoDynamicTabs [layout-align] > * {
+  margin-left: 8px; }
+.tabsdemoDynamicTabs form > [layout] > * {
+  margin-left: 8px; }
+.tabsdemoDynamicTabs .long > input {
+  width: 264px; }
+
+.tabsdemoDynamicTabs .add-button {
+  position: relative;
+  top: -70px;
+  right: 15px;
+  float: right;
+}
+
+.tabsdemoDynamicTabs .add-icon {
+  font-size: 25px;
 }
