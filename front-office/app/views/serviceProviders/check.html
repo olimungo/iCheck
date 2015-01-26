@@ -1,3 +1,10 @@
-<div style="font-size: 25px; color: white;">
-Check
+<div ng-controller="ServiceProvidersCheckCtrl" class="check">
+  <div class="clock-date">{{ clock  | date:'d MMMM yyyy'}}</div>
+  <div class="clock-hour">{{ clock  | date:'H:mm'}}</div>
+
+  <md-input-container class="button">
+    <md-button class="md-raised md-primary">Check in</md-button>
+  </md-input-container>
+
+  <p class="total">You worked 6 hours and 37 minutes today</p>
 </div>

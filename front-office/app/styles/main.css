@@ -8,12 +8,10 @@
   font-size: 50px;
 }
 
-.sp-home .clock {
-}
-
 .sp-home .clock-date {
   color: #999;
-  font-size: 12px;
+  font-size: 15px;
+  margin-bottom: 5px;
 }
 
 .sp-home .clock-hour {
@@ -38,6 +36,25 @@
 .check .content {
   margin: 50px;
   min-height: 100px;
+}
+
+.check .clock-date {
+  color: #1976D2;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.check .clock-hour {
+  color: #fff;
+  font-size: 70px;
+}
+
+.check .button {
+  margin-top: 20px;
+}
+
+.check .total {
+  color: #1976D2;
 }
 
 .reveal-animation.ng-enter {
@@ -66,44 +83,44 @@
   opacity: 0;
 }
 
-.tabsdemoDynamicTabs .demo-tab {
-  height: 500px;
+.tabs .demo-tab {
+  height: 600px;
   text-align: center; }
-.tabsdemoDynamicTabs .tab1 {
+.tabs .tab1 {
   background-color: #bbdefb; }
-.tabsdemoDynamicTabs .md-header {
+.tabs .md-header {
   background-color: #1976D2 !important; }
-.tabsdemoDynamicTabs md-tab {
+.tabs md-tab {
   color: #90caf9 !important; }
-.tabsdemoDynamicTabs md-tab.active, .tabsdemoDynamicTabs md-tab:focus {
+.tabs md-tab.active, .tabs md-tab:focus {
   color: white !important; }
-.tabsdemoDynamicTabs md-tab[disabled] {
+.tabs md-tab[disabled] {
   opacity: 0.5; }
-.tabsdemoDynamicTabs .md-header .md-ripple {
+.tabs .md-header .md-ripple {
   border-color: #FFFF8D !important; }
-.tabsdemoDynamicTabs md-tabs-ink-bar {
+.tabs md-tabs-ink-bar {
   background-color: #FFFF8D !important; }
-.tabsdemoDynamicTabs .title {
+.tabs .title {
   padding-top: 8px;
   padding-right: 8px;
   text-align: left;
   text-transform: uppercase;
   color: #888;
   margin-top: 24px; }
-.tabsdemoDynamicTabs [layout-align] > * {
+.tabs [layout-align] > * {
   margin-left: 8px; }
-.tabsdemoDynamicTabs form > [layout] > * {
+.tabs form > [layout] > * {
   margin-left: 8px; }
-.tabsdemoDynamicTabs .long > input {
+.tabs .long > input {
   width: 264px; }
 
-.tabsdemoDynamicTabs .add-button {
-  position: relative;
-  top: -70px;
-  right: 15px;
-  float: right;
-}
-
-.tabsdemoDynamicTabs .add-icon {
+.tabs .add-icon {
   font-size: 25px;
 }
+
+.comments .add-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+

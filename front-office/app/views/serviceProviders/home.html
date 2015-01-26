@@ -9,7 +9,7 @@
     </md-toolbar>
 
     <md-content>
-      <div class="tabsdemoDynamicTabs">
+      <div class="tabs">
         <md-tabs md-selected="selectedIndex" class="md-hue-2">
           <md-tab label="Check">
             <div class="demo-tab tab1" layout="column" layout-fill layout-align="space-around center">
@@ -31,18 +31,10 @@
 
           <md-tab label="Comments">
             <div class="demo-tab tab1" layout="column" layout-fill layout-align="space-around center">
-              <div>Comments</div>
+              <div class="slide-animate" ng-include="'views/serviceProviders/comments.html'"></div>
             </div>
           </md-tab>
         </md-tabs>
-
-        <md-button class="md-warn md-fab add-button">
-          <i class="fa fa-plus add-icon"></i>
-        </md-button>
-
-        <div layout="row" layout-sm="column" layout-margin layout-align="left center">
-          <md-text-float label="Active Index" ng-model="selectedIndex" disabled></md-text-float>
-        </div>
       </div>
     </md-content>
   </div>
