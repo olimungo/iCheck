@@ -1,4 +1,4 @@
-<div ng-controller="ServiceProvidersCheckCtrl" class="check">
+<div class="check" ng-controller="ServiceProvidersCheckCtrl" layout-align="center">
   <div class="clock-date">{{ clock  | date:'d MMMM yyyy'}}</div>
   <div class="clock-hour">{{ clock  | date:'H:mm'}}</div>
 
@@ -7,4 +7,29 @@
   </md-input-container>
 
   <p class="total">You worked 6 hours and 37 minutes today</p>
+
+  <div layout="row" class="period" layout-align="center">
+    <div class="period-label">Morning in</div>
+    <div class="badge">7:56</div>
+  </div>
+
+  <div layout="row" class="period" layout-align="center">
+    <div class="period-label">Morning out</div>
+    <div class="badge">7:56</div>
+  </div>
+
+  <div layout="row" layout-align="center">
+    <div class="period-divider"></div>
+  </div>
+
+
+  <div layout="row" class="period" layout-align="center">
+    <div class="period-label">Afternoon in</div>
+    <div class="badge">7:56</div>
+  </div>
+
+  <div layout="row" class="period" layout-align="center">
+    <div class="period-label">Afternoon out</div>
+    <div class="badge">7:56</div>
+  </div>
 </div>

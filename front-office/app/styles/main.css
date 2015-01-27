@@ -1,3 +1,18 @@
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #FFF;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #2196F3;
+  border-radius: 10px;
+}
+
 .sp-home .container {
   margin-top: 20px;
   width: 250px;
@@ -19,42 +34,68 @@
   font-size: 70px;
 }
 
-.check .container {
+.home .container {
   width: 800px;
 }
 
-.check .clock-icon {
+.home .clock-icon {
   font-size: 25px;
   margin-right: 10px;
 }
 
-.check .sign-out-icon {
+.home .sign-out-icon {
   font-size: 25px;
   width: 40px;
 }
 
-.check .content {
+.home .content {
   margin: 50px;
   min-height: 100px;
 }
 
-.check .clock-date {
+.home .clock-date {
   color: #1976D2;
   font-size: 15px;
   margin-bottom: 5px;
 }
 
-.check .clock-hour {
+.home .clock-hour {
   color: #fff;
   font-size: 70px;
 }
 
+.check {
+  margin-top: 70px;
+}
+
 .check .button {
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .check .total {
+  font-size: 14px;
   color: #1976D2;
+  margin-bottom: 20px;
+}
+
+.check .period {
+  color: #1976D2;
+  margin-top: 10px;
+}
+
+.check .period-label {
+  font-size: 14px;
+  color: #fff;
+  margin-right: 20px;
+  width: 100px;
+  text-align: left;
+}
+
+.check .period-divider {
+  border-bottom: solid 1px #4CA0F2;
+  width: 170px;
+  margin-top: 10px;
 }
 
 .reveal-animation.ng-enter {
@@ -83,11 +124,12 @@
   opacity: 0;
 }
 
-.tabs .demo-tab {
+.tabs .tab {
   height: 600px;
-  text-align: center; }
-.tabs .tab1 {
-  background-color: #bbdefb; }
+  text-align: center;
+  background-color: #bbdefb;
+}
+
 .tabs .md-header {
   background-color: #1976D2 !important; }
 .tabs md-tab {
