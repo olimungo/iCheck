@@ -94,8 +94,13 @@
 
 .check .period-divider {
   border-bottom: solid 1px #4CA0F2;
-  width: 170px;
+  width: 190px;
   margin-top: 10px;
+}
+
+.check .badge {
+  width: 55px;
+  height: 18px;
 }
 
 .reveal-animation.ng-enter {
