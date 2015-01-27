@@ -103,6 +103,86 @@
   height: 18px;
 }
 
+.week .week-panel {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0;
+}
+
+.week .week-panel li {
+  display: inline-block;
+  width: 50px;
+}
+
+.week .week-panel li p {
+  line-height: 1;
+}
+
+.week .week-panel .navigator {
+  vertical-align: top;
+  margin: 90px 15px 0 15px
+}
+
+.week .week-panel .centered {
+  text-align: center;
+}
+
+.week .date-range {
+  color: #1976D2;
+  font-size: 22px;
+  margin-top: 50px;
+}
+
+.week .week-panel .day-label {
+  font-size: 12px;
+  margin: 2px;
+  padding: 4px 2px 2px 2px;
+  color: #1976D2;
+  background-color: #fff;
+  border-radius: 1px;
+}
+
+.week .week-panel .day {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 2px;
+  padding: 4px 2px 2px 2px;
+  color: #1976D2;
+  background-color: #fff;
+  border-radius: 1px;
+}
+
+.week .week-panel .day-of-week {
+  font-size: 14px;
+  margin: 2px;
+  padding: 4px 2px 2px 2px;
+  color: #1976D2;
+  background-color: #fff;
+  border-radius: 1px;
+}
+
+.week .week-panel .day-of-week:hover {
+  transform: scale(1.3);
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+  background-color: #fafafa;
+  border-radius: 3px;
+}
+
+.week .week-panel .total {
+  font-weight: bold;
+  margin: 2px;
+  padding: 4px 2px 2px 2px;
+  color: #1976D2;
+  background-color: #fff;
+  border-radius: 1px;
+}
+
+.week .border-bottom {
+  margin: 8px;
+  /*padding: 0;*/
+}
+
 .reveal-animation.ng-enter {
   overflow-y: hidden;
   margin-top: 200px;
@@ -154,10 +234,7 @@
   text-transform: uppercase;
   color: #888;
   margin-top: 24px; }
-.tabs [layout-align] > * {
-  margin-left: 8px; }
-.tabs form > [layout] > * {
-  margin-left: 8px; }
+
 .tabs .long > input {
   width: 264px; }
 

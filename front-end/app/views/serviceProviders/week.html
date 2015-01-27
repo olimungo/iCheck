@@ -1,0 +1,27 @@
+<div class="week" ng-controller="ServiceProvidersWeekCtrl">
+    <div class="date-range">26/01/2015 <i class="fa fa-chevron-circle-right"></i> 01/02/2015</div>
+
+    <ul class="week-panel">
+      <li class="navigator">
+        <md-button class="md-raised md-primary"><i class="fa fa-chevron-left"></i></md-button>
+        <!--button type="button" class="btn btn-default" ng-click="changeWeek(-1)"><span class="glyphicon glyphicon-chevron-left"></span></button-->
+      </li>
+
+      <li class="centered" ng-repeat="day in week">
+        <p class="centered day-label">{{day.ui.shortDayLabel}}</p>
+        <p class="centered day">{{day.ui.shortDateLabel}}</p>
+        <p class="border-bottom"></p>
+        <p class="centered day-of-week" ng-click="editTime(day, 't1', day.t1)">{{day.ui.t1 || '-'}}</p>
+        <p class="centered day-of-week" ng-click="editTime(day, 't2', day.t2)">{{day.ui.t2 || '-'}}</p>
+        <p class="centered day-of-week" ng-click="editTime(day, 't3', day.t3)">{{day.ui.t3 || '-'}}</p>
+        <p class="centered day-of-week" ng-click="editTime(day, 't4', day.t4)">{{day.ui.t4 || '-'}}</p>
+        <p class="border-bottom"></p>
+        <p class="centered total">{{day.ui.total || '-'}}</p>
+      </li>
+
+      <li class="navigator">
+        <md-button class="md-raised md-primary"><i class="fa fa-chevron-right"></i></md-button>
+        <!--button type="button" class="btn btn-default" ng-click="changeWeek(1)"><span class="glyphicon glyphicon-chevron-right"></span></button-->
+      </li>
+    </ul>
+</div>
