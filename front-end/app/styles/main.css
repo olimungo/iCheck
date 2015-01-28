@@ -181,7 +181,38 @@
 
 .week .border-bottom {
   margin: 8px;
-  /*padding: 0;*/
+}
+
+.month .date-range {
+  color: #1976D2;
+  font-size: 22px;
+  margin: 50px 0 50px 0;
+}
+
+.month .day-of-week {
+  font-size: 14px;
+  font-weight: 600;
+  height: 25px;
+  width: 40px;
+  margin: 4px;
+  padding: 4px 2px 2px 2px;
+  color: #1976D2;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.month .day {
+  font-size: 18px;
+  width: 40px;
+  margin: 4px;
+  padding: 4px 2px 2px 2px;
+  color: #1976D2;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.month .navigator {
+  margin: 65px 20px 0 20px;
 }
 
 .reveal-animation.ng-enter {
