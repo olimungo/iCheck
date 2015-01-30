@@ -215,6 +215,30 @@
   margin: 65px 20px 0 20px;
 }
 
+.requests .add-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.requests .list {
+  margin-top: 30px;
+  height: 500px;
+  background-color: #BBDEFB;
+}
+
+.requests .item {
+  padding: 30px;
+  border: solid 1px #aaa;
+  margin-bottom: 5px;
+  background-color: whitesmoke;
+  text-align: left;
+}
+
+.requests .remove-padding-bottom {
+  padding-bottom: 0;
+}
+
 .reveal-animation.ng-enter {
   overflow-y: hidden;
   margin-top: 200px;
@@ -272,11 +296,5 @@
 
 .tabs .add-icon {
   font-size: 25px;
-}
-
-.comments .add-button {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
 }
 
