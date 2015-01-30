@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('frontOfficeApp')
-.controller('ServiceProvidersLoginCtrl', function ($scope, $timeout, $location) {
+.controller('LoginCtrl', function ($scope, $timeout, $location) {
   $scope.clock = '';
   $scope.tickInterval = 5000;
 
   var tick = function() {
-      $scope.clock = Date.now() // get the current time
-      $timeout(tick, $scope.tickInterval); // reset the timer
-  }
+      $scope.clock = Date.now();
+      $timeout(tick, $scope.tickInterval);
+  };
 
   tick();
 

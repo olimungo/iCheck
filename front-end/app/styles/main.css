@@ -221,6 +221,13 @@
   right: 15px;
 }
 
+.requests .fa-comments {
+  float: left;
+  color: #ddd;
+  font-size: 40px;
+  margin: -20px -10px;
+}
+
 .requests .list {
   margin-top: 30px;
   height: 500px;
@@ -229,14 +236,38 @@
 
 .requests .item {
   padding: 30px;
-  border: solid 1px #aaa;
+  border: solid 1px #ccc;
   margin-bottom: 5px;
   background-color: whitesmoke;
   text-align: left;
+  border-radius: 5px;
 }
 
 .requests .remove-padding-bottom {
   padding-bottom: 0;
+}
+
+.requests .header {
+  margin-bottom: 30px;
+}
+
+.requests .badge {
+  font-size: 9px;
+  float: right;
+  border-radius: 3px;
+  margin-top: -10px;
+}
+
+.requests .badge.pending {
+  background-color: #aaa;
+}
+
+.requests .badge.accepted {
+  background-color: #1DA81D;
+}
+
+.requests .badge.refused {
+  background-color: #DD3838;
 }
 
 .reveal-animation.ng-enter {
@@ -296,5 +327,10 @@
 
 .tabs .add-icon {
   font-size: 25px;
+}
+
+.new-request .content {
+  width: 600px;
+  height: 400px;
 }
 

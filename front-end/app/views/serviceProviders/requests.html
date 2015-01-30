@@ -1,6 +1,13 @@
 <div class="requests" layout="column" ng-controller="ServiceProvidersRequestsCtrl">
   <md-content class="list">
     <div class="item" ng-repeat="request in requests">
+      <div class="header">
+        <i class="fa fa-comments"></i>
+        <div class="badge accepted" ng-if="request.reply=='AC'">ACCEPTED</div>
+        <div class="badge refused" ng-if="request.reply=='RE'">REFUSED</div>
+        <div class="badge pending" ng-if="request.reply=='PE'">PENDING</div>
+      </div>
+
       <div layout="row">
         <md-input-container flex>
           <label>Date</label>
@@ -20,12 +27,17 @@
 
       <md-input-container flex class="remove-padding-bottom">
         <label>Comment</label>
-        <textarea ng-model="request.comment" rows="0" disabled></textarea>
+        <textarea ng-model="request.comment" disabled></textarea>
+      </md-input-container>
+
+      <md-input-container flex class="remove-padding-bottom" ng-if="request.reason!=null">
+        <label>Reason</label>
+        <textarea ng-model="request.reason" disabled></textarea>
       </md-input-container>
     </div>
   </md-content>
 
-  <md-button class="md-warn md-fab add-button">
+  <md-button class="md-warn md-fab add-button" ng-click="add()">
     <i class="fa fa-plus add-icon"></i>
   </md-button>
 </div>
