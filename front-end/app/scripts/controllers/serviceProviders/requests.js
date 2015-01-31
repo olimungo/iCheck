@@ -16,7 +16,7 @@ angular.module('frontOfficeApp')
     };
   }
 
-  console.log(calendar.getMonth(new Date(2015, 11, 15)));
+  console.log(calendar.getMonth(new Date(2015, 1, 15)));
 
   $scope.requests = [
     { date: '01/01/2015', period: 'Morning in', time:'7:33', comment: 'Went directly to a meeting', reply: 'AC' },

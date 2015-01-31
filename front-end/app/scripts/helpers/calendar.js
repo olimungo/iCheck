@@ -2,6 +2,8 @@
 
 angular.module('frontOfficeApp')
 .factory('calendar',  function () {
+  // Construct a calendar array of 6 weeks.
+  // Monday being the first day of the week.
   function _getMonth (date) {
     var result = {
       monthLabel: '',
@@ -19,17 +21,17 @@ angular.module('frontOfficeApp')
           lastDay = new Date(year, month+1, 0).getDate(),
           firstDayOfWeek = new Date(year, month, 1).getDay(),
           days = [],
-          i, j, l, dummyDays, week  ;
+          i, j, l, week  ;
 
       result.monthLabel = monthNames[month] + ' ' + year;
 
-      dummyDays = firstDayOfWeek - 1;
-
-      if (dummyDays < 0) {
-        dummyDays = 6;
+      // Set Sunday as the 7th day of the week instead of 0.
+      if (firstDayOfWeek === 0) {
+        firstDayOfWeek = 7;
       }
 
-      for (i=1; i <= dummyDays; i++) {
+      // Insert leading dummy days.
+      for (i=1; i < firstDayOfWeek; i++) {
         days.push(0);
       }
 
@@ -37,11 +39,13 @@ angular.module('frontOfficeApp')
         days.push(i);
       }
 
+      // Insert trailing dummy days.
       l = (6 * 7) - days.length;
       for (i=1; i <= l; i++) {
         days.push(0);
       }
 
+      // Convert flat array of days into array of weeks (6 weeks per month including dummy days).
       l = 0;
       for (i=0; i < 6; i++) {
         week = [];
