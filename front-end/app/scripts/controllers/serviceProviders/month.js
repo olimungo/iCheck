@@ -26,6 +26,4 @@ angular.module('frontOfficeApp')
 
     $scope.month.push(week);
   }
-
-  console.log($scope.month);
 });
