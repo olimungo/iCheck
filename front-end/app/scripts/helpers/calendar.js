@@ -21,7 +21,8 @@ angular.module('frontOfficeApp')
           lastDay = new Date(year, month+1, 0).getDate(),
           firstDayOfWeek = new Date(year, month, 1).getDay(),
           days = [],
-          i, j, l, week  ;
+          now = new Date(),
+          i, j, l, week, day;
 
       result.monthLabel = monthNames[month] + ' ' + year;
 
@@ -32,9 +33,10 @@ angular.module('frontOfficeApp')
 
       // Insert leading dummy days.
       for (i=1; i < firstDayOfWeek; i++) {
-        days.push('X');
+        days.push(0);
       }
 
+      // Insert days of requested month
       for (i=1; i <= lastDay; i++) {
         days.push(i);
       }
@@ -42,7 +44,7 @@ angular.module('frontOfficeApp')
       // Insert trailing dummy days.
       l = (6 * 7) - days.length;
       for (i=1; i <= l; i++) {
-        days.push('X');
+        days.push(0);
       }
 
       // Convert flat array of days into array of weeks (6 weeks per month including dummy days).
@@ -51,7 +53,14 @@ angular.module('frontOfficeApp')
         week = [];
 
         for (j=0; j < 7; j++) {
-          week.push(days[l]);
+          day = { num: days[l], current: false };
+
+          // Tag current day
+          if (year === now.getFullYear() && month === now.getMonth() && day.num === now.getDate()) {
+            day.current = true;
+          }
+
+          week.push(day);
           l++;
         }
 

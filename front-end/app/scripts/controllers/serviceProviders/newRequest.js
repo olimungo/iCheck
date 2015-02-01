@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontOfficeApp')
-.controller('ServiceProvidersNewRequestCtrl', function ($scope, calendar) {
+.controller('ServiceProvidersNewRequestCtrl', function ($scope) {
   var WIZARD_STEPS = {
     DATE: 1,
     PERIOD: 2,
@@ -9,12 +9,8 @@ angular.module('frontOfficeApp')
     COMMENT: 4
   };
 
-  var month;
-
   $scope.WIZARD_STEPS = WIZARD_STEPS;
   $scope.currentWizardState = WIZARD_STEPS.DATE;
-
-  $scope.month = calendar.getMonth(new Date());
 
   $scope.previous = function () {
     if ($scope.currentWizardState > 1) {
