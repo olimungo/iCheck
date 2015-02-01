@@ -2,7 +2,27 @@
   <md-content class="content">
     <div class="header" layout="row" layout-align="start center">
       <i class="fa fa-comment icon"></i>
-      <div class="title">NEW REQUEST  - Select a date (1/4)</div>
+
+      <div class="title" layout="row" ng-if="currentWizardState==WIZARD_STEPS.DATE">
+        <div>NEW REQUEST</div>
+
+        <div class="subtitle">Select a date (1/4)</div>
+      </div>
+
+      <div class="title" layout="row" ng-if="currentWizardState==WIZARD_STEPS.PERIOD">
+        <span>NEW REQUEST</span>
+        <span class="subtitle">Select a period (2/4)</span>
+      </div>
+
+      <div class="title" layout="row" ng-if="currentWizardState==WIZARD_STEPS.TIME">
+        <span>NEW REQUEST</span>
+        <span class="subtitle">Select an hour (3/4)</span>
+      </div>
+
+      <div class="title" layout="row" ng-if="currentWizardState==WIZARD_STEPS.COMMENT">
+        <span>NEW REQUEST</span>
+        <span class="subtitle">Write a comment (4/4)</span>
+      </div>
     </div>
 
     <div class="states" layout="column" layout-align="center center">
@@ -44,31 +64,33 @@
       </div>
 
       <div class="state-period" ng-if="currentWizardState==WIZARD_STEPS.PERIOD">
-        SELECT A PERIOD
       </div>
 
       <div class="state-time" ng-if="currentWizardState==WIZARD_STEPS.TIME">
-        SELECT A TIME
       </div>
 
       <div class="state-comment" ng-if="currentWizardState==WIZARD_STEPS.COMMENT">
-        WRITE A COMMENT
       </div>
     </div>
   </md-content>
 
   <div class="md-actions" layout="row">
-    <md-button ng-click="answer('not useful')">
+    <md-button class="fixed-button-width" ng-click="answer('not useful')">
      CANCEL
     </md-button>
+
     <span flex></span>
 
-    <md-button ng-click="previous()" class="md-primary">
-     PREVIOUS
+    <md-button ng-click="previous()" class="md-primary fixed-button-width" ng-show="currentWizardState &gt; WIZARD_STEPS.DATE">
+     <i class="fa fa-chevron-left"></i>&nbsp;&nbsp;PREVIOUS
     </md-button>
 
-    <md-button ng-click="next()" class="md-primary">
-      NEXT
+    <md-button ng-click="next()" class="md-primary fixed-button-width" ng-show="currentWizardState &lt; WIZARD_STEPS.COMMENT">
+      NEXT&nbsp;&nbsp;<i class="fa fa-chevron-right"></i>
+    </md-button>
+
+    <md-button ng-click="create()" class="md-primary fixed-button-width" ng-show="currentWizardState == WIZARD_STEPS.COMMENT" style="color:green;">
+      VALIDATE&nbsp;&nbsp;<i class="fa fa-check"></i>
     </md-button>
   </div>
 </md-dialog>
