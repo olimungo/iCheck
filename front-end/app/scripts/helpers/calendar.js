@@ -6,6 +6,7 @@ angular.module('frontOfficeApp')
   // Monday being the first day of the week.
   function _getMonth (date) {
     var result = {
+      date: date,
       monthLabel: '',
       dayNames: [ 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
       weeks: []

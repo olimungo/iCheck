@@ -41,7 +41,7 @@ angular.module('frontOfficeApp')
   $scope.add = function(event) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'views/serviceProviders/newRequest.html',
+      templateUrl: 'views/serviceProviders/newRequest/dialog.html',
       targetEvent: event,
     })
     .then(function(answer) {
