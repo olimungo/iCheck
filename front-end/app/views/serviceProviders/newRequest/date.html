@@ -1,5 +1,4 @@
-<div class="state-date" layout="row" layout-align="center center" ng-if="currentWizardState==WIZARD_STEPS.DATE"
-  ng-controller="ServiceProvidersNewRequestDateCtrl">
+<div class="state-date" layout="row" layout-align="center center" ng-controller="ServiceProvidersNewRequestDateCtrl">
   <div class="navigator">
     <md-button class="md-raised md-primary" ng-click="navigate(-1)" aria-label="Go to previous month"><i class="fa fa-chevron-left"></i></md-button>
   </div>
@@ -8,7 +7,7 @@
     <div class="header-month" layout="column" layout-align="center center">
       <div class="label-month">{{month.monthLabel}}</div>
 
-      <div class="day-selected-header" ng-class="{'hide': selectedDay==null}">{{selectedDay.num}}</div>
+      <div class="day-selected-header" ng-class="{'hide': selectedDay==null}">{{selectedDay}}</div>
 
       <div layout="row" layout-align="start center">
         <div ng-repeat="day in month.dayNames">

@@ -31,10 +31,9 @@
     </div>
 
     <div class="states" layout="column" layout-align="center center">
-        <div ng-include="'views/serviceProviders/newRequest/date.html'"></div>
+        <div ng-include="'views/serviceProviders/newRequest/date.html'" ng-if="currentWizardState==WIZARD_STEPS.DATE"></div>
 
-        <div class="state-period" ng-if="currentWizardState==WIZARD_STEPS.PERIOD">
-        </div>
+        <div ng-include="'views/serviceProviders/newRequest/period.html'" ng-if="currentWizardState==WIZARD_STEPS.PERIOD"></div>
 
         <div class="state-time" ng-if="currentWizardState==WIZARD_STEPS.TIME">
         </div>
