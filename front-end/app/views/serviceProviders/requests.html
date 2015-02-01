@@ -2,7 +2,9 @@
   <md-content class="list">
     <div class="item" ng-repeat="request in requests">
       <div class="header">
-        <i class="fa fa-comments"></i>
+        <i class="fa fa-comments icon" ng-if="request.reply=='RE'"></i>
+        <i class="fa fa-comment icon" ng-if="request.reply!='RE'"></i>
+
         <div class="badge accepted" ng-if="request.reply=='AC'">ACCEPTED</div>
         <div class="badge refused" ng-if="request.reply=='RE'">REFUSED</div>
         <div class="badge pending" ng-if="request.reply=='PE'">PENDING</div>

@@ -32,7 +32,7 @@ angular.module('frontOfficeApp')
 
       // Insert leading dummy days.
       for (i=1; i < firstDayOfWeek; i++) {
-        days.push(0);
+        days.push('X');
       }
 
       for (i=1; i <= lastDay; i++) {
@@ -42,7 +42,7 @@ angular.module('frontOfficeApp')
       // Insert trailing dummy days.
       l = (6 * 7) - days.length;
       for (i=1; i <= l; i++) {
-        days.push(0);
+        days.push('X');
       }
 
       // Convert flat array of days into array of weeks (6 weeks per month including dummy days).

@@ -16,8 +16,6 @@ angular.module('frontOfficeApp')
     };
   }
 
-  console.log(calendar.getMonth(new Date(2015, 1, 15)));
-
   $scope.requests = [
     { date: '01/01/2015', period: 'Morning in', time:'7:33', comment: 'Went directly to a meeting', reply: 'AC' },
     { date: '01/01/2015', period: 'Morning in', time:'7:33', comment: 'Went directly to a meeting', reply: 'RE', reason: 'False assertion' },
@@ -39,19 +37,6 @@ angular.module('frontOfficeApp')
     { date: '01/01/2015', period: 'Morning in', time:'7:33', comment: 'Went directly to a meeting', reply: 'AC' },
     { date: '01/01/2015', period: 'Morning in', time:'7:33', comment: 'Went directly to a meeting', reply: 'AC' },
   ];
-
-  // $scope.add = function () {
-  //   alert = $mdDialog.alert()
-  //   .title('Attention, xxx')
-  //   .content('This is an example of how easy dialogs can be!')
-  //   .ok('Close');
-
-  //   $mdDialog
-  //   .show(alert)
-  //   .finally(function() {
-  //     alert = undefined;
-  //   });
-  // };
 
   $scope.add = function(event) {
     $mdDialog.show({

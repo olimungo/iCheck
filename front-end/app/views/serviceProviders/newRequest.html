@@ -1,21 +1,99 @@
-<md-dialog class="new-request">
+<md-dialog class="new-request" ng-controller="ServiceProvidersNewRequestCtrl">
   <md-content class="content">
-    <md-subheader class="md-primary">NEW REQUEST</md-subheader>
+    <div class="header" layout="row" layout-align="start center">
+      <i class="fa fa-comment icon"></i>
+      <div class="title">NEW REQUEST  - Select a date (1/4)</div>
+    </div>
 
-    <div style="background-color: #aaa;">
-      SELECT A DATE
+    <div class="states" layout="column" layout-align="center center">
+        <div class="state-date" layout="row" layout-align="center center" ng-if="currentWizardState==WIZARD_STEPS.DATE">
+          <div class="navigator">
+            <md-button class="md-raised md-primary"><i class="fa fa-chevron-left"></i></md-button>
+          </div>
+
+          <div class="box-month">
+            <div class="header-month" layout="column" layout-align="center center">
+              <div class="label-month">{{month.monthLabel}}</div>
+
+              <div layout="row" layout-align="start center">
+                <div ng-repeat="day in month.dayNames">
+                  <div class="day-of-week">{{day}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="days" layout="column" layout-align="center center">
+              <div ng-repeat="week in month.weeks">
+                <div layout="row">
+                  <div class="day" ng-repeat="day in week track by $index">{{day}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navigator">
+            <md-button class="md-raised md-primary"><i class="fa fa-chevron-right"></i></md-button>
+          </div>
+      </div>
+
+      <div class="state-period" ng-if="currentWizardState==WIZARD_STEPS.PERIOD">
+        SELECT A PERIOD
+      </div>
+
+      <div class="state-time" ng-if="currentWizardState==WIZARD_STEPS.TIME">
+        SELECT A TIME
+      </div>
+
+      <div class="state-comment" ng-if="currentWizardState==WIZARD_STEPS.COMMENT">
+        WRITE A COMMENT
+      </div>
     </div>
   </md-content>
 
   <div class="md-actions" layout="row">
-    <span flex></span>
-
     <md-button ng-click="answer('not useful')">
      CANCEL
     </md-button>
+    <span flex></span>
 
-    <md-button ng-click="answer('useful')" class="md-primary">
+    <md-button ng-click="previous()" class="md-primary">
+     PREVIOUS
+    </md-button>
+
+    <md-button ng-click="next()" class="md-primary">
       NEXT
     </md-button>
   </div>
 </md-dialog>
+
+<!--
+    <ng-switch on="data.selectedIndex" class="tabpanel-container">
+        <div role="tabpanel"
+             id="tab1-content"
+             aria-labelledby="tab1"
+             ng-switch-when="0"
+             md-swipe-left="next()"
+             md-swipe-right="previous()" >
+            View for Item #1<br/>
+            data.selectedIndex = 0
+        </div>
+        <div role="tabpanel"
+             id="tab2-content"
+             aria-labelledby="tab2"
+             ng-switch-when="1"
+             md-swipe-left="next()"
+             md-swipe-right="previous()" >
+            View for {{data.secondLabel}}<br/>
+            data.selectedIndex = 1
+        </div>
+        <div role="tabpanel"
+             id="tab3-content"
+             aria-labelledby="tab3"
+             ng-switch-when="2"
+             md-swipe-left="next()"
+             md-swipe-right="previous()" >
+            View for Item #3<br/>
+            data.selectedIndex = 2
+        </div>
+    </ng-switch>
+-->
