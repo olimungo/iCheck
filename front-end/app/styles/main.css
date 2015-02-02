@@ -446,19 +446,19 @@ body {
 }
 
 .new-request .states .state-date .box-month {
-  border: solid 1px #2196F3;
+  border: solid 1px #1976D2;
   border-radius: 2px;
 }
 
 .new-request .states .state-date .box-month .header-month {
   padding: 10px;
-  background-color: #2196F3;
+  background-color: #1976D2;
   color: #fff;
 }
 
 .new-request .states .state-date .box-month .header-month {
   padding: 5px;
-  background-color: #2196F3;
+  background-color: #1976D2;
   color: #fff;
 }
 
@@ -470,14 +470,14 @@ body {
 
 .new-request .states .state-date .box-month .header-month .day-selected-header {
   background-color: #fff;
-  color: #2196F3;
+  color: #1976D2;
   border-radius: 50%;
   width: 45px;
   height: 45px;
   font-size: 30px;
   text-align: center;
   vertical-align: middle;
-  padding: 10px 0 0 0;
+  padding: 10px 1px 0 0;
   margin: 10px 0 20px 0;
 }
 
@@ -486,7 +486,7 @@ body {
 }
 
 .new-request .states .state-date .box-month .header-month .day-of-week {
-  color: #2196F3;
+  color: #1976D2;
   background-color: #fff;
   border-radius: 1px;
   text-transform: uppercase;
@@ -500,8 +500,8 @@ body {
 
 .new-request .states .state-date .box-month .days .day {
   cursor: pointer;
-  color: #2196F3;
-  border: solid 1px #2196F3;
+  color: #1976D2;
+  border: solid 1px #1976D2;
   background-color: #fff;
   border-radius: 2px;
   text-transform: uppercase;
@@ -514,9 +514,9 @@ body {
 
 .new-request .states .state-date .box-month .days .day-current {
   cursor: pointer;
-  color: whitesmoke;
-  border: solid 1px #2196F3;
-  background-color: #2196F3;
+  color: #fff;
+  border: solid 1px #1976D2;
+  background-color: #1976D2;
   border-radius: 2px;
   text-transform: uppercase;
   margin: 5px;
@@ -529,10 +529,10 @@ body {
 
 .new-request .states .state-date .box-month .days .day-dummy {
   cursor: pointer;
-  color: #2196F3;
-  border: solid 1px #2196F3;
-  background-color: #2196F3;
-  opacity: .2;
+  color: #1976D2;
+  border: solid 1px #1976D2;
+  background-color: #1976D2;
+  opacity: .3;
   border-radius: 2px;
   text-transform: uppercase;
   margin: 5px;
@@ -551,7 +551,7 @@ body {
 
 .new-request .states .state-period {
   margin-top: 130px;
-  color: #2196F3;
+  color: #1976D2;
 }
 
 .new-request .states .state-period .divider {
@@ -562,7 +562,7 @@ body {
 
 .new-request .states .state-time {
   margin-top: 80px;
-  color: #2196F3;
+  color: #1976D2;
 }
 
 .new-request .states .state-time .unit {
@@ -570,7 +570,7 @@ body {
 }
 
 .new-request .states .state-time .unit .digit {
-  border: solid 1px #2196F3;
+  border: solid 1px #1976D2;
   width: 40px;
   height: 50px;
   text-align: center;
