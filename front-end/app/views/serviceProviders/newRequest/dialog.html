@@ -35,14 +35,11 @@
 
         <div ng-include="'views/serviceProviders/newRequest/period.html'" ng-if="currentWizardState==WIZARD_STEPS.PERIOD"></div>
 
-        <div class="state-time" ng-if="currentWizardState==WIZARD_STEPS.TIME">
-        </div>
+        <div ng-include="'views/serviceProviders/newRequest/time.html'" ng-if="currentWizardState==WIZARD_STEPS.TIME"></div>
 
-        <div class="state-comment" ng-if="currentWizardState==WIZARD_STEPS.COMMENT">
-        </div>
+        <div ng-include="'views/serviceProviders/newRequest/comment.html'" ng-if="currentWizardState==WIZARD_STEPS.COMMENT"></div>
 
-        <div class="state-validate" ng-if="currentWizardState==WIZARD_STEPS.VALIDATE">
-      </div>
+        <div ng-include="'views/serviceProviders/newRequest/validate.html'" ng-if="currentWizardState==WIZARD_STEPS.VALIDATE"></div>
     </div>
   </md-content>
 
