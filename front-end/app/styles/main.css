@@ -2,7 +2,7 @@
 ** General transitions
 */
 
-.reveal-animation.ng-enter {
+/*.reveal-animation.ng-enter {
   overflow-y: hidden;
   margin-top: 200px;
 
@@ -26,16 +26,25 @@
 .reveal-animation.ng-leave.ng-leave-active {
   height: 0;
   opacity: 0;
-}
+}*/
 
 /*
 ** General selectors
 */
 
+body {
+/*  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;*/
+  background-color: #bbdefb;
+}
+
 .badge {
   display: inline-block;
   min-width: 10px;
-  padding: 3px 7px;
+  padding: 7px 7px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
@@ -51,33 +60,45 @@
 ** Login
 */
 
+.login md-content {
+  background-color: #bbdefb;
+}
+
 .login .container {
-  margin-top: 20px;
+  margin-top: 100px;
   width: 250px;
 }
 
 .login .clock-icon {
-  color: #ddd;
+  color: #fff;
   font-size: 50px;
 }
 
 .login .clock-date {
-  color: #999;
+  color: #2196F3;
   font-size: 15px;
   margin-bottom: 5px;
 }
 
 .login .clock-hour {
-  color: #777;
-  font-size: 70px;
+  color: #fff;
+  font-size: 90px;
 }
 
 /*
 ** ServiceProviders' Home page
 */
 
+.home {
+}
+
+.home md-content {
+  background-color: #bbdefb;
+}
+
 .home .container {
-  width: 800px;
+  width: 100%;
+  height: 100%;
 }
 
 .home .clock-icon {
@@ -88,11 +109,6 @@
 .home .sign-out-icon {
   font-size: 25px;
   width: 40px;
-}
-
-.home .content {
-  margin: 50px;
-  min-height: 100px;
 }
 
 .home .clock-date {
@@ -107,9 +123,8 @@
 }
 
 .home .tabs .tab {
-  height: 600px;
+  height: 100%;
   text-align: center;
-  background-color: #bbdefb;
 }
 
 .home .tabs .md-header {
@@ -319,30 +334,32 @@
 ** ServiceProviders' REQUESTS tab
 */
 
+.requests {
+  margin-top: 30px;
+}
+
 .requests .add-button {
   position: absolute;
   bottom: 15px;
   right: 15px;
 }
 
-.requests .fa-comments {
+.requests .fa-comments, .requests .fa-comment {
   float: left;
-  color: #ddd;
+  color: #E4ECF4;
   font-size: 40px;
   margin: -20px -10px;
 }
 
-.requests .list {
-  margin-top: 30px;
-  height: 500px;
-  background-color: #BBDEFB;
+.requests md-content {
+  height: 750px;
 }
 
 .requests .item {
   padding: 30px;
-  border: solid 1px #ccc;
+  border: solid 1px #8CBEE5;
   margin-bottom: 5px;
-  background-color: whitesmoke;
+  background-color: #fff;
   text-align: left;
   border-radius: 5px;
 }
@@ -356,7 +373,6 @@
 }
 
 .requests .badge {
-  font-size: 9px;
   float: right;
   border-radius: 3px;
   margin-top: -10px;
@@ -396,7 +412,6 @@
 .new-request .header .icon {
   font-size: 30px;
   margin: 0 20px 5px 10px;
-  opacity: .8;
 }
 
 .new-request .header .title {
