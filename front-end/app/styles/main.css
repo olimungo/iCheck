@@ -1,3 +1,37 @@
+/*
+** General transitions
+*/
+
+.reveal-animation.ng-enter {
+  overflow-y: hidden;
+  margin-top: 200px;
+
+  transition-property: all;
+  transition-duration: .9s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  opacity: 0;
+}
+
+.reveal-animation.ng-enter.ng-enter-active {
+  margin-top: 0;
+  opacity: 1;
+}
+
+.reveal-animation.ng-leave {
+  transition-property: all;
+  transition-duration: .9s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.reveal-animation.ng-leave.ng-leave-active {
+  height: 0;
+  opacity: 0;
+}
+
+/*
+** General selectors
+*/
+
 .badge {
   display: inline-block;
   min-width: 10px;
@@ -13,26 +47,34 @@
   border-radius: 10px;
 }
 
-.sp-home .container {
+/*
+** Login
+*/
+
+.login .container {
   margin-top: 20px;
   width: 250px;
 }
 
-.sp-home .clock-icon {
+.login .clock-icon {
   color: #ddd;
   font-size: 50px;
 }
 
-.sp-home .clock-date {
+.login .clock-date {
   color: #999;
   font-size: 15px;
   margin-bottom: 5px;
 }
 
-.sp-home .clock-hour {
+.login .clock-hour {
   color: #777;
   font-size: 70px;
 }
+
+/*
+** ServiceProviders' Home page
+*/
 
 .home .container {
   width: 800px;
@@ -63,6 +105,56 @@
   color: #fff;
   font-size: 70px;
 }
+
+.home .tabs .tab {
+  height: 600px;
+  text-align: center;
+  background-color: #bbdefb;
+}
+
+.home .tabs .md-header {
+  background-color: #1976D2 !important;
+}
+
+.home .tabs md-tab {
+  color: #90caf9 !important;
+}
+
+.home .tabs md-tab.active, .home .tabs md-tab:focus {
+  color: white !important;
+}
+
+.home .tabs md-tab[disabled] {
+  opacity: 0.5;
+}
+
+.home .tabs .md-header .md-ripple {
+  border-color: #FFFF8D !important;
+}
+
+.home .tabs md-tabs-ink-bar {
+  background-color: #FFFF8D !important;}
+
+.home .tabs .title {
+  padding-top: 8px;
+  padding-right: 8px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 24px;
+}
+
+.home .tabs .long > input {
+  width: 264px;
+}
+
+.home .tabs .add-icon {
+  font-size: 25px;
+}
+
+/*
+** ServiceProviders' CHECK tab
+*/
 
 .check {
   margin-top: 70px;
@@ -108,6 +200,10 @@
   text-align: center;
   padding: 0;
 }
+
+/*
+** ServiceProviders' WEEK tab
+*/
 
 .week .week-panel li {
   display: inline-block;
@@ -183,6 +279,10 @@
   margin: 8px;
 }
 
+/*
+** ServiceProviders' MONTH tab
+*/
+
 .month .date-range {
   color: #1976D2;
   font-size: 22px;
@@ -214,6 +314,10 @@
 .month .navigator {
   margin: 65px 20px 0 20px;
 }
+
+/*
+** ServiceProviders' REQUESTS tab
+*/
 
 .requests .add-button {
   position: absolute;
@@ -270,67 +374,154 @@
   background-color: #DD3838;
 }
 
-.reveal-animation.ng-enter {
-  overflow-y: hidden;
-  margin-top: 200px;
-
-  transition-property: all;
-  transition-duration: .9s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  opacity: 0;
-}
-
-.reveal-animation.ng-enter.ng-enter-active {
-  margin-top: 0;
-  opacity: 1;
-}
-
-.reveal-animation.ng-leave {
-  transition-property: all;
-  transition-duration: .9s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
-
-.reveal-animation.ng-leave.ng-leave-active {
-  height: 0;
-  opacity: 0;
-}
-
-.tabs .tab {
-  height: 600px;
-  text-align: center;
-  background-color: #bbdefb;
-}
-
-.tabs .md-header {
-  background-color: #1976D2 !important; }
-.tabs md-tab {
-  color: #90caf9 !important; }
-.tabs md-tab.active, .tabs md-tab:focus {
-  color: white !important; }
-.tabs md-tab[disabled] {
-  opacity: 0.5; }
-.tabs .md-header .md-ripple {
-  border-color: #FFFF8D !important; }
-.tabs md-tabs-ink-bar {
-  background-color: #FFFF8D !important; }
-.tabs .title {
-  padding-top: 8px;
-  padding-right: 8px;
-  text-align: left;
-  text-transform: uppercase;
-  color: #888;
-  margin-top: 24px; }
-
-.tabs .long > input {
-  width: 264px; }
-
-.tabs .add-icon {
-  font-size: 25px;
-}
+/*
+** ServiceProviders' new request
+*/
 
 .new-request .content {
   width: 600px;
-  height: 400px;
+  height: 450px;
+}
+
+.new-request .header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1976D2;
+  padding: 15px;
+  color: whitesmoke;
+}
+
+.new-request .header .icon {
+  font-size: 30px;
+  margin: 0 20px 5px 10px;
+  opacity: .8;
+}
+
+.new-request .header .title {
+  text-transform: uppercase;
+}
+
+.new-request .header .subtitle {
+  position: absolute;
+  right: 0;
+  margin-right: 25px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.new-request .fixed-button-width {
+  width: 130px;
+}
+
+.new-request .states .state-date {
+  margin-top: 60px;
+}
+
+.new-request .states .state-date .navigator {
+  margin: 20px;
+}
+
+.new-request .states .state-date .box-month {
+  border: solid 1px #1976D2;
+}
+
+.new-request .states .state-date .box-month .header-month {
+  padding: 10px;
+  background-color: #1976D2;
+  color: whitesmoke;
+}
+
+.new-request .states .state-date .box-month .header-month {
+  padding: 5px;
+  background-color: #1976D2;
+  color: whitesmoke;
+}
+
+.new-request .states .state-date .box-month .header-month .label-month {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.new-request .states .state-date .box-month .header-month .day-selected-header {
+  background-color: whitesmoke;
+  color: #1976D2;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 0 0 0;
+  margin: 10px 0 20px 0;
+}
+
+.new-request .states .state-date .box-month .header-month .hide {
+  visibility: hidden;
+}
+
+.new-request .states .state-date .box-month .header-month .day-of-week {
+  color: #1976D2;
+  background-color: #F5F5F5;
+  border-radius: 1px;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding-top: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.new-request .states .state-date .box-month .days .day {
+  cursor: pointer;
+  color: #1976D2;
+  border: solid 1px #1976D2;
+  background-color: #fff;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.new-request .states .state-date .box-month .days .day-current {
+  cursor: pointer;
+  color: whitesmoke;
+  border: solid 1px #1976D2;
+  background-color: #1976D2;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.new-request .states .state-date .box-month .days .day-dummy {
+  cursor: pointer;
+  color: #1976D2;
+  border: solid 1px #1976D2;
+  background-color: #1976D2;
+  opacity: .1;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.new-request .states .state-date .box-month .days .day:hover,
+.new-request .states .state-date .box-month .days .day-current:hover {
+  transform: scale(1.6);
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
 }
 
