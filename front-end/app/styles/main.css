@@ -380,7 +380,7 @@
 
 .new-request .content {
   width: 600px;
-  height: 450px;
+  height: 460px;
 }
 
 .new-request .header {
@@ -390,7 +390,7 @@
   left: 0;
   background-color: #1976D2;
   padding: 15px;
-  color: whitesmoke;
+  color: #fff;
 }
 
 .new-request .header .icon {
@@ -424,19 +424,19 @@
 }
 
 .new-request .states .state-date .box-month {
-  border: solid 1px #1976D2;
+  border: solid 1px #2196F3;
 }
 
 .new-request .states .state-date .box-month .header-month {
   padding: 10px;
-  background-color: #1976D2;
-  color: whitesmoke;
+  background-color: #2196F3;
+  color: #fff;
 }
 
 .new-request .states .state-date .box-month .header-month {
   padding: 5px;
-  background-color: #1976D2;
-  color: whitesmoke;
+  background-color: #2196F3;
+  color: #fff;
 }
 
 .new-request .states .state-date .box-month .header-month .label-month {
@@ -446,8 +446,8 @@
 }
 
 .new-request .states .state-date .box-month .header-month .day-selected-header {
-  background-color: whitesmoke;
-  color: #1976D2;
+  background-color: #fff;
+  color: #2196F3;
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -463,8 +463,8 @@
 }
 
 .new-request .states .state-date .box-month .header-month .day-of-week {
-  color: #1976D2;
-  background-color: #F5F5F5;
+  color: #2196F3;
+  background-color: #fff;
   border-radius: 1px;
   text-transform: uppercase;
   margin: 5px;
@@ -477,8 +477,8 @@
 
 .new-request .states .state-date .box-month .days .day {
   cursor: pointer;
-  color: #1976D2;
-  border: solid 1px #1976D2;
+  color: #2196F3;
+  border: solid 1px #2196F3;
   background-color: #fff;
   border-radius: 2px;
   text-transform: uppercase;
@@ -492,23 +492,24 @@
 .new-request .states .state-date .box-month .days .day-current {
   cursor: pointer;
   color: whitesmoke;
-  border: solid 1px #1976D2;
-  background-color: #1976D2;
+  border: solid 1px #2196F3;
+  background-color: #2196F3;
   border-radius: 2px;
   text-transform: uppercase;
   margin: 5px;
   width: 42px;
   padding: 4px 0;
   font-size: 14px;
+  font-weight: 600;
   text-align: center;
 }
 
 .new-request .states .state-date .box-month .days .day-dummy {
   cursor: pointer;
-  color: #1976D2;
-  border: solid 1px #1976D2;
-  background-color: #1976D2;
-  opacity: .1;
+  color: #2196F3;
+  border: solid 1px #2196F3;
+  background-color: #2196F3;
+  opacity: .2;
   border-radius: 2px;
   text-transform: uppercase;
   margin: 5px;
@@ -523,5 +524,17 @@
   transform: scale(1.6);
   transition-duration: 100ms;
   transition-timing-function: ease-out;
+}
+
+.new-request .states .state-period {
+  margin-top: 100px;
+  color: #2196F3;
+}
+
+.new-request .states .state-period .divider {
+  border-bottom: solid 1px #2196F3;
+  margin: 30px 0;
+  width: 100%;
+  opacity: 0.5;
 }
 
