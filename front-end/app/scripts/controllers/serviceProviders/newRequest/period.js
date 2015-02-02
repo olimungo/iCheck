@@ -6,7 +6,7 @@ angular.module('frontOfficeApp')
 
   newRequest.checkDisableNextForPeriod();
 
-  $scope.selectPeriod = function (period) {
+  $scope.setPeriod = function (period) {
     newRequest.setPeriod(period);
   };
 });

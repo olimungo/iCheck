@@ -101,6 +101,11 @@ body {
   height: 100%;
 }
 
+.home .title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .home .clock-icon {
   font-size: 25px;
   margin-right: 10px;
@@ -416,12 +421,14 @@ body {
 
 .new-request .header .title {
   text-transform: uppercase;
+  font-size: 20px;
 }
 
 .new-request .header .subtitle {
   position: absolute;
   right: 0;
   margin-right: 25px;
+  margin-top: 2px;
   text-transform: uppercase;
   font-size: 14px;
 }
@@ -554,7 +561,7 @@ body {
 }
 
 .new-request .states .state-time {
-  margin-top: 140px;
+  margin-top: 80px;
   color: #2196F3;
 }
 
@@ -576,5 +583,16 @@ body {
 .new-request .states .state-time .separator {
   font-size: 30px;
   font-weight: 600;
+}
+
+.new-request .states .state-time .message {
+  margin-bottom: 30px;
+}
+
+.new-request .states .state-time .min-max {
+  margin: 5px;
+  font-size: 18px;
+  /*text-transform: uppercase;*/
+  text-align: center;
 }
 

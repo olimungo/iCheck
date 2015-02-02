@@ -20,7 +20,7 @@ angular.module('frontOfficeApp')
 
   newRequest.checkDisableNextForDate();
 
-  $scope.selectDay = function (day) {
+  $scope.setDate = function (day) {
     $scope.selectedDay = day.num;
     newRequest.setDate(new Date($scope.month.date.getFullYear(), $scope.month.date.getMonth(), day.num));
   }

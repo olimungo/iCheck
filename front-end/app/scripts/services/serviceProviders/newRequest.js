@@ -54,12 +54,50 @@ angular.module('frontOfficeApp')
   }
 
   function _getTime () {
-    return _get('time');
+    var time = {
+      period: _request.period,
+      selected: null,
+      min: null,
+      max: null
+    };
+
+    switch (_request.period) {
+      case 't1':
+        time.min = { h1: 0, h2: 6, m1: 3, m2: 0 };
+        time.max = { h1: 1, h2: 0, m1: 3, m2: 0 };
+        break;
+      case 't2':
+        time.min = { h1: 1, h2: 1, m1: 0, m2: 0 };
+        time.max = { h1: 1, h2: 4, m1: 1, m2: 5 };
+        break;
+      case 't3':
+        time.min = { h1: 1, h2: 2, m1: 3, m2: 0 };
+        time.max = { h1: 1, h2: 5, m1: 3, m2: 0 };
+        break;
+      case 't4':
+        time.min = { h1: 1, h2: 5, m1: 3, m2: 0 };
+        time.max = { h1: 2, h2: 0, m1: 0, m2: 0 };
+        break;
+    }
+
+    if (_request.time !== null) {
+      time.selected = _request.time;
+    } else {
+      time.selected = { h1: 0, h2: 0, m1: 0, m2: 0 };
+    }
+
+    return time;
   }
 
   function _setTime (time) {
-    _request.time = time;
-    $rootScope.$broadcast('nextDisabled', false);
+    if (time === null) {
+      _request.time = null;
+      _checkDisableNextForTime();
+    } else if (time.hasOwnProperty('h1') && time.hasOwnProperty('h2') &&
+        time.hasOwnProperty('m1') && time.hasOwnProperty('m2')) {
+      _request.time = time;
+      $rootScope.$broadcast('nextDisabled', false);
+    }
   }
 
   function _getComment () {
@@ -97,6 +135,17 @@ angular.module('frontOfficeApp')
     _checkDisableNext(_request.comment);
   }
 
+  function _timeToMinutes (time) {
+    var result = 0;
+
+    if (time.hasOwnProperty('h1') && time.hasOwnProperty('h2') &&
+        time.hasOwnProperty('m1') && time.hasOwnProperty('m2')) {
+      result = (time.h1 * 60 * 10) + (time.h2 * 60) + (time.m1 * 10) + time.m2;
+    }
+
+    return result;
+  }
+
   return {
     WIZARD_STEPS: _WIZARD_STEPS,
     create: _create,
@@ -111,6 +160,7 @@ angular.module('frontOfficeApp')
     checkDisableNextForDate: _checkDisableNextForDate,
     checkDisableNextForPeriod: _checkDisableNextForPeriod,
     checkDisableNextForTime: _checkDisableNextForTime,
-    checkDisableNextForComment: _checkDisableNextForComment
+    checkDisableNextForComment: _checkDisableNextForComment,
+    timeToMinutes: _timeToMinutes
   };
 });

@@ -1,51 +1,58 @@
-<div class="state-time" layout="row" layout-align="center center" ng-controller="ServiceProvidersNewRequestTimeCtrl">
-  <div class="unit" layout="column" ng-show="true">
-     <md-button class="md-raised md-primary" ng-click="tick('h1', 1)" aria-label="Go to previous month">
-        <i class="fa fa-chevron-up"></i>
-      </md-button>
-
-      <div class="digit">{{h1}}</div>
-
-      <md-button class="md-raised md-primary" ng-click="tick('h1', -1)" aria-label="Go to previous month">
-        <i class="fa fa-chevron-down"></i>
-      </md-button>
+<div class="state-time" layout="column" layout-align="center center" ng-controller="ServiceProvidersNewRequestTimeCtrl">
+  <div class="message" layout="column">
+    <div class="min-max">Minimum time is {{min.h1}}{{min.h2}}:{{min.m1}}{{min.m2}}</div>
+    <div class="min-max">Maximum time is {{max.h1}}{{max.h2}}:{{max.m1}}{{max.m2}}</div>
   </div>
 
-  <div class="unit" layout="column">
-     <md-button class="md-raised md-primary" ng-click="tick('h2', 1)" aria-label="Go to previous month">
-        <i class="fa fa-chevron-up"></i>
-      </md-button>
+  <div layout="row" layout-align="center center">
+    <div class="unit" layout="column" ng-show="true">
+       <md-button class="md-raised md-primary" ng-click="tick('h1', 1)" aria-label="Go to previous month">
+          <i class="fa fa-chevron-up"></i>
+        </md-button>
 
-      <div class="digit">{{h2}}</div>
+        <div class="digit">{{time.h1}}</div>
 
-      <md-button class="md-raised md-primary" ng-click="tick('h2', -1)" aria-label="Go to previous month">
-        <i class="fa fa-chevron-down"></i>
-      </md-button>
-  </div>
+        <md-button class="md-raised md-primary" ng-click="tick('h1', -1)" aria-label="Go to previous month">
+          <i class="fa fa-chevron-down"></i>
+        </md-button>
+    </div>
 
-  <div class="separator">:</div>
+    <div class="unit" layout="column">
+       <md-button class="md-raised md-primary" ng-click="tick('h2', 1)" aria-label="Go to previous month">
+          <i class="fa fa-chevron-up"></i>
+        </md-button>
 
-  <div class="unit" layout="column">
-     <md-button class="md-raised md-primary" ng-click="tick('m1', 1)" aria-label="Go to previous month">
-        <i class="fa fa-chevron-up"></i>
-      </md-button>
+        <div class="digit">{{time.h2}}</div>
 
-      <div class="digit">{{m1}}</div>
+        <md-button class="md-raised md-primary" ng-click="tick('h2', -1)" aria-label="Go to previous month">
+          <i class="fa fa-chevron-down"></i>
+        </md-button>
+    </div>
 
-      <md-button class="md-raised md-primary" ng-click="tick('m1', -1)" aria-label="Go to previous month">
-        <i class="fa fa-chevron-down"></i>
-      </md-button>
-  </div>
+    <div class="separator">:</div>
 
-  <div class="unit" layout="column">
-     <md-button class="md-raised md-primary" ng-click="tick('m2', 1)" aria-label="Go to previous month">
-        <i class="fa fa-chevron-up"></i>
-      </md-button>
+    <div class="unit" layout="column">
+       <md-button class="md-raised md-primary" ng-click="tick('m1', 1)" aria-label="Go to previous month">
+          <i class="fa fa-chevron-up"></i>
+        </md-button>
 
-      <div class="digit">{{m2}}</div>
+        <div class="digit">{{time.m1}}</div>
 
-      <md-button class="md-raised md-primary" ng-click="tick('m2', -1)" aria-label="Go to previous month">
-        <i class="fa fa-chevron-down"></i>
-      </md-button>
+        <md-button class="md-raised md-primary" ng-click="tick('m1', -1)" aria-label="Go to previous month">
+          <i class="fa fa-chevron-down"></i>
+        </md-button>
+    </div>
+
+    <div class="unit" layout="column">
+       <md-button class="md-raised md-primary" ng-click="tick('m2', 1)" aria-label="Go to previous month">
+          <i class="fa fa-chevron-up"></i>
+        </md-button>
+
+        <div class="digit">{{time.m2}}</div>
+
+        <md-button class="md-raised md-primary" ng-click="tick('m2', -1)" aria-label="Go to previous month">
+          <i class="fa fa-chevron-down"></i>
+        </md-button>
+    </div>
   </div>
 </div>

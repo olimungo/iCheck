@@ -21,7 +21,7 @@
         <div layout="row">
           <div ng-repeat="day in week track by $index">
             <div ng-class="{'day': !day.current, 'day-current': day.current}" ng-show="day.num!=0"
-              ng-click="selectDay(day)">{{day.num}}</div>
+              ng-click="setDate(day)">{{day.num}}</div>
             <div class="day-dummy" ng-show="day.num==0">&nbsp;</div>
           </div>
         </div>
