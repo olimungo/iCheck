@@ -2,11 +2,11 @@
 
 angular.module('frontOfficeApp')
 .controller('ServiceProvidersNewRequestCommentCtrl', function ($scope, newRequest) {
-  $scope.period = newRequest.getPeriod();
+  $scope.comment = newRequest.getComment();
 
-  newRequest.checkDisableNextForPeriod();
+  newRequest.checkDisableNextForComment();
 
-  $scope.selectPeriod = function (period) {
-    newRequest.setPeriod(period);
+  $scope.setComment = function () {
+    newRequest.setComment($scope.comment);
   };
 });

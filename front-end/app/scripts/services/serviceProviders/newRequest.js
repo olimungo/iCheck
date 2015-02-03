@@ -101,18 +101,25 @@ angular.module('frontOfficeApp')
   }
 
   function _getComment () {
-    return _get('date');
+    return _get('comment');
   }
 
   function _setComment (comment) {
+    var disabled = false;
+
     _request.comment = comment;
-    $rootScope.$broadcast('nextDisabled', false);
+
+    if (comment === null || comment === '') {
+      disabled = true;
+    }
+
+    $rootScope.$broadcast('nextDisabled', disabled);
   }
 
   function _checkDisableNext (property) {
     var result = false;
 
-    if (property === null) {
+    if (property === null || property === '') {
       result = true;
     }
 
