@@ -1,5 +1,40 @@
 <div class="requests" layout="column" ng-controller="ServiceProvidersRequestsCtrl">
   <md-content>
+    <div ng-repeat="request in requests">
+      <md-whiteframe class="md-whiteframe-z1 item" layout>
+        <div class="box-date">
+          <div class="month">{{request.date.month}}</div>
+          <div class="day">{{request.date.day}}</div>
+          <div class="year">{{request.date.year}}</div>
+        </div>
+
+        <div class="info" layout="column">
+          <div layout="row">
+            <div class="box" layout="column"><i class="fa fa-server icon-date icon-top"></i> {{request.period}}</div>
+            <div class="box" layout="column"><i class="fa fa-clock-o icon-date icon-top"></i> {{request.time}}</div>
+            <!--div class="box" layout="column" ng-if="request.reply=='RE'"><i class="fa fa-comments icon-date icon-top"></i></div>
+            <div class="box" layout="column" ng-if="request.reply!='RE'"><i class="fa fa-comment icon-date icon-top"></i></div-->
+            <md-button class="md-primary">
+              <div class="box" ng-if="request.reply=='RE'"><i class="fa fa-comments icon-top"></i></div>
+              <div class="box" ng-if="request.reply!='RE'"><i class="fa fa-comment icon-top"></i></div>
+            </md-button>
+          </div>
+
+          <div class="status accepted" ng-if="request.reply=='AC'">ACCEPTED</div>
+          <div class="status refused" ng-if="request.reply=='RE'">REFUSED</div>
+          <div class="status pending" ng-if="request.reply=='PE'">PENDING</div>
+        </div>
+      </md-whiteframe>
+    </div>
+  </md-content>
+
+  <md-button class="md-warn md-fab add-button" ng-click="add()" aria-label="Add a request">
+    <i class="fa fa-plus add-icon"></i>
+  </md-button>
+</div>
+
+<!--div class="requests" layout="column" ng-controller="ServiceProvidersRequestsCtrl">
+  <md-content>
     <div class="list">
       <div class="item" ng-repeat="request in requests">
         <div class="header">
@@ -44,4 +79,4 @@
   <md-button class="md-warn md-fab add-button" ng-click="add()" aria-label="Add a request">
     <i class="fa fa-plus add-icon"></i>
   </md-button>
-</div>
+</div-->
