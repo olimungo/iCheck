@@ -17,7 +17,7 @@ angular.module('frontOfficeApp')
       date: null,
       period: null,
       time: null,
-      comment: null,
+      comment: null
     };
   }
 
@@ -35,6 +35,18 @@ angular.module('frontOfficeApp')
     return _get('date');
   }
 
+  function _getDateFormatted () {
+    var date = _request.date;
+
+    if (date !== null) {
+      date = ("0" + date.getDate()).substr(-2, 2) + '/' + ("0" + (date.getMonth()+1)).substr(-2, 2) + '/' + date.getFullYear();
+    } else {
+      date = '';
+    }
+
+    return date;
+  }
+
   function _setDate (date) {
     if (date instanceof Date) {
       _request.date = date;
@@ -44,6 +56,10 @@ angular.module('frontOfficeApp')
 
   function _getPeriod () {
     return _get('period');
+  }
+
+  function _getPeriodLabel () {
+    return 'Morning in';
   }
 
   function _setPeriod (period) {
@@ -84,6 +100,18 @@ angular.module('frontOfficeApp')
       time.selected = _request.time;
     } else {
       time.selected = { h1: 0, h2: 0, m1: 0, m2: 0 };
+    }
+
+    return time;
+  }
+
+  function _getTimeFormatted () {
+    var time = _request.time;
+
+    if (time !== null) {
+      time = '12:30';
+    } else {
+      time = '';
     }
 
     return time;
@@ -157,10 +185,13 @@ angular.module('frontOfficeApp')
     WIZARD_STEPS: _WIZARD_STEPS,
     create: _create,
     getDate: _getDate,
+    getDateFormatted: _getDateFormatted,
     setDate: _setDate,
     getPeriod: _getPeriod,
+    getPeriodLabel: _getPeriodLabel,
     setPeriod: _setPeriod,
     getTime: _getTime,
+    getTimeFormatted: _getTimeFormatted,
     setTime: _setTime,
     getComment: _getComment,
     setComment: _setComment,

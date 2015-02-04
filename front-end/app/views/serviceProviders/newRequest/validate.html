@@ -1,3 +1,21 @@
-<div class="state-period" layout="row" layout-align="center center" ng-controller="ServiceProvidersNewRequestValidateCtrl">
-validate
+<div class="state-validate" layout="column" layout-align="center center" ng-controller="ServiceProvidersNewRequestValidateCtrl">
+  <div layout="row">
+    <div class="box" layout="column" layout-align="center center"><i class="fa fa-calendar icon-date icon-top"></i> {{date}}</div>
+    <div class="box" layout="column" layout-align="center center"><i class="fa fa-server icon-date icon-top"></i> {{period}}</div>
+    <div class="box" layout="column" layout-align="center center"><i class="fa fa-clock-o icon-date icon-top"></i> {{time}}</div>
+    <!--div class="box" layout="column" ng-if="request.reply=='RE'"><i class="fa fa-comments icon-date icon-top"></i></div>
+    <div class="box" layout="column" ng-if="request.reply!='RE'"><i class="fa fa-comment icon-date icon-top"></i></div-->
+  </div>
+
+  <div layout="row" layout-align="start start" style="width: 100%">
+    <div class="icon-comment" ng-if="request.reply=='RE'"><i class="fa fa-comments icon-top"></i></div>
+    <div class="icon-comment" ng-if="request.reply!='RE'"><i class="fa fa-comment icon-top"></i></div>
+
+    <textarea class="comment" rows="5" ng-model="comment" disabled=""></textarea>
+
+<!--     <md-input-container>
+      <label>Comment</label>
+      <textarea rows="5" class="comment" ng-model="comment"></textarea>
+    </md-input-container> -->
+  </div>
 </div>
