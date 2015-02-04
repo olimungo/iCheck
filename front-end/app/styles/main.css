@@ -598,8 +598,9 @@ body {
 
 .new-request .states .state-time .min-max {
   margin: 5px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 /*
