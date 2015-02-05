@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontOfficeApp')
-.controller('ServiceProvidersNewRequestDateCtrl', function ($scope, calendar, newRequest) {
+.controller('ServiceProvidersNewRequestDateCtrl', function ($scope, chronos, newRequest) {
   var date = newRequest.getDate();
 
   if (date !== null) {
@@ -16,7 +16,7 @@ angular.module('frontOfficeApp')
   // 31/03/2015 and removing 1 month gives a result of 03/03/2015.
   date.setDate(5);
 
-  $scope.month = calendar.getMonth(date);
+  $scope.month = chronos.getMonth(date);
 
   newRequest.checkDisableNextForDate();
 
@@ -29,6 +29,6 @@ angular.module('frontOfficeApp')
     $scope.selectedDay = null;
     $scope.month.date.setMonth($scope.month.date.getMonth() + step);
 
-    $scope.month = calendar.getMonth($scope.month.date);
+    $scope.month = chronos.getMonth($scope.month.date);
   };
 });

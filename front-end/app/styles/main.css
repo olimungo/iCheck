@@ -33,7 +33,12 @@
 */
 
 body {
-  background-color: #bbdefb;
+  background-color: #eee;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
 }
 
 .badge {
@@ -91,6 +96,10 @@ body {
   background-color: #bbdefb;
 }
 
+.home md-content .md-header-items-container {
+  padding-left: 220px;
+}
+
 .home .container {
   width: 100%;
   height: 100%;
@@ -98,17 +107,45 @@ body {
 
 .home .title {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 100;
+  color: #BBDEFB;
 }
 
 .home .clock-icon {
   font-size: 25px;
   margin-right: 10px;
+  color: #BBDEFB;
 }
 
-.home .sign-out-icon {
+.home .menu-icon {
   font-size: 25px;
   width: 40px;
+}
+
+.home .menu {
+  position: absolute;
+  right: 10px;
+  top:  50px;
+  width: 160px;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity .25s ease-in;
+}
+
+.home .menu.visible {
+  opacity: 1;
+}
+
+.home .menu .button {
+  color: #5076AA;
+  width: 100%;
+}
+
+.home .menu .sign-out-icon {
+  font-size: 25px;
+  margin-right: 10px;
 }
 
 .home .clock-date {
@@ -500,9 +537,7 @@ body {
 .new-request .states .state-date .box-month .days .day {
   cursor: pointer;
   color: #5076AA;
-  border: solid 1px #5076AA;
   background-color: #fff;
-  border-radius: 2px;
   text-transform: uppercase;
   margin: 5px;
   width: 42px;
@@ -527,13 +562,7 @@ body {
 }
 
 .new-request .states .state-date .box-month .days .day-dummy {
-  cursor: pointer;
-  color: #5076AA;
-  border: solid 1px #5076AA;
-  background-color: #5076AA;
-  opacity: .3;
   border-radius: 2px;
-  text-transform: uppercase;
   margin: 5px;
   width: 42px;
   padding: 4px 0;

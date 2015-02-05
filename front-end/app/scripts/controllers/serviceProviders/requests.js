@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontOfficeApp')
-.controller('ServiceProvidersRequestsCtrl', function ($scope, $mdDialog, calendar) {
+.controller('ServiceProvidersRequestsCtrl', function ($scope, $mdDialog) {
   var alert;
 
   function DialogController($scope, $mdDialog) {

@@ -3,14 +3,24 @@
     <md-toolbar class="md-primary">
       <div class="md-toolbar-tools">
         <span><i class="fa fa-clock-o clock-icon"></i><span class="title">iCheck</span></span>
+
         <div flex></div>
-        <md-button aria-label="Logout the application"><i class="fa fa-sign-out sign-out-icon"></i></md-button>
+
+        <md-button aria-label="Logout the application" ng-click="showMenu()">
+          <i class="fa fa-ellipsis-v menu-icon"></i>
+        </md-button>
+
+        <div class="menu md-whiteframe-z1" ng-class="{'visible': menuVisible}">
+          <md-button class="button" layout="row" layout-align="start center" ng-click="logOut()">
+            <i class="fa fa-sign-out sign-out-icon"></i> Log out
+          </md-button>
+        </div>
       </div>
     </md-toolbar>
 
     <md-content>
       <div class="tabs">
-        <md-tabs md-selected="selectedIndex" class="md-hue-2">
+        <md-tabs md-selected="selectedIndex">
           <md-tab label="Check">
             <div class="tab" layout="column" layout-fill layout-align="start center">
               <div ng-include="'views/serviceProviders/check.html'"></div>

@@ -21,7 +21,8 @@ angular.module('frontOfficeApp', [ 'ngAnimate', 'ngCookies', 'ngMessages',
       controller: 'LoginCtrl'
     })
     .when('/serviceProviders/home', {
-      templateUrl: 'views/serviceProviders/home.html'
+      templateUrl: 'views/serviceProviders/home.html',
+      controller: 'ServiceProvidersHomeCtrl'
     })
     .otherwise({
       redirectTo: '/login'
