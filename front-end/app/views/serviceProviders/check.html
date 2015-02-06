@@ -2,13 +2,51 @@
   <div class="clock-date">{{ clock  | date:'d MMMM yyyy'}}</div>
   <div class="clock-hour">{{ clock  | date:'H:mm'}}</div>
 
-  <md-input-container class="button">
-    <md-button class="md-raised md-primary">Check in</md-button>
+  <md-input-container>
+    <md-button class="md-raised md-primary button">Check in</md-button>
   </md-input-container>
 
   <p class="total">You worked 6 hours and 37 minutes today</p>
 
-  <div layout="row" class="period" layout-align="center">
+  <div layout="row" layout-align="center center">
+    <div class="box" layout="column">
+      <i class="fa fa-sun-o"></i>
+
+      <div class="text" layout="row">
+        <div class="in-out">IN</div>
+        <div flex></div>
+        <div class="hour">7:33</div>
+      </div>
+
+      <div class="text" layout="row">
+        <div class="in-out">OUT</div>
+        <div flex></div>
+        <div class="hour">12:17</div>
+      </div>
+    </div>
+
+    <div class="box" layout="column">
+      <i class="fa fa-moon-o"></i>
+
+      <div class="text" layout="row">
+        <div class="in-out">IN</div>
+        <div flex></div>
+        <div class="hour">13:24</div>
+      </div>
+
+      <div class="text" layout="row">
+        <div class="in-out">OUT</div>
+        <div flex></div>
+        <div class="hour">18:17</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+
+  <!--div layout="row" class="period" layout-align="center">
     <div class="period-label">Morning in</div>
     <div class="badge">7h56</div>
   </div>
@@ -22,7 +60,6 @@
     <div class="period-divider"></div>
   </div>
 
-
   <div layout="row" class="period" layout-align="center">
     <div class="period-label">Afternoon in</div>
     <div class="badge">13h45</div>
@@ -31,5 +68,5 @@
   <div layout="row" class="period" layout-align="center">
     <div class="period-label">Afternoon out</div>
     <div class="badge"></div>
-  </div>
+  </div-->
 </div>
