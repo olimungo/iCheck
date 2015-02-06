@@ -45,12 +45,8 @@ angular.module('frontOfficeApp')
 
       // Insert trailing dummy days...
       l = (6 * 7) - days.length;
-
-      // ...but don't, if last lines contains only dummy days
-      if (l < 7) {
-        for (i=1; i <= l; i++) {
-          days.push(0);
-        }
+      for (i=1; i <= l; i++) {
+        days.push(0);
       }
 
       // Convert flat array of days into array of weeks (6 weeks per month including dummy days).
@@ -73,6 +69,10 @@ angular.module('frontOfficeApp')
         result.weeks.push(week);
       }
 
+      // Remove last line, if it contains only dummy days
+      if (result.weeks[5][0].num === 0) {
+        result.weeks.splice(5, 1);
+      }
     }
 
     return result;

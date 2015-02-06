@@ -199,20 +199,11 @@ body {
   padding: 15px;
   color: #fff;
   background-color: #2196F3;
+  border-radius: 2px;
 }
 
 .check .box i {
   font-size: 40px;
-}
-
-.check .total {
-  font-size: 16px;
-  color: #1976D2;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.check .box i {
   margin-bottom: 30px;
 }
 
@@ -222,6 +213,11 @@ body {
 }
 
 .check .box .text .in-out {
+  color: #BBDEFB;
+}
+
+.check .box .duration, .check .box .percentage {
+  font-size: 30px;
   color: #BBDEFB;
 }
 
@@ -395,28 +391,21 @@ body {
 }
 
 .requests .box-date {
-  background-color: #5076AA;
+  background-color: #2196F3;
   color: #fff;
-  width: 110px;
+  width: 140px;
   height:110px;
   padding: 15px 10px;
   text-align: center;
-  color: #B4C6EE;
+  font-size: 14px;
 }
 
-.requests .item .box-date .month {
-  text-transform: uppercase;
-  font-size: 14px;
+.requests .item .box-date .day-label {
   margin: 1px 0 3px 0;
 }
 
 .requests .item .box-date .day {
   font-size: 50px;
-  color: #fff;
-}
-
-.requests .item .box-date .year {
-  font-size: 14px;
 }
 
 .requests .info {
@@ -427,6 +416,7 @@ body {
   margin: 15px 30px;
   text-align: center;
   font-size: 14px;
+  width: 30px;
 }
 
 .requests .item .info .box .icon-top {
@@ -472,7 +462,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #5076AA;
+  background-color: #2196F3;
   padding: 15px;
   color: #fff;
 }
@@ -490,7 +480,6 @@ body {
   margin-top: 2px;
   text-transform: uppercase;
   font-size: 14px;
-  color: #A5C3DD;
 }
 
 .new-request .fixed-button-width {
@@ -508,23 +497,23 @@ body {
 .new-request .states .state-date .navigator {
   margin: 10px;
   padding: 25px;
-  color: #5076AA;
+  color: #2196F3;
 }
 
 .new-request .states .state-date .box-month {
-  border: solid 1px #5076AA;
+  border: solid 1px #2196F3;
   border-radius: 2px;
 }
 
 .new-request .states .state-date .box-month .header-month {
   padding: 10px;
-  background-color: #5076AA;
+  background-color: #2196F3;
   color: #fff;
 }
 
 .new-request .states .state-date .box-month .header-month {
   padding: 5px;
-  background-color: #5076AA;
+  background-color: #2196F3;
   color: #fff;
 }
 
@@ -536,7 +525,7 @@ body {
 
 .new-request .states .state-date .box-month .header-month .day-selected-header {
   background-color: #fff;
-  color: #5076AA;
+  color: #2196F3;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -552,9 +541,7 @@ body {
 }
 
 .new-request .states .state-date .box-month .header-month .day-of-week {
-  color: #5076AA;
-  background-color: #fff;
-  border-radius: 1px;
+  color: #2196F3;
   text-transform: uppercase;
   margin: 5px;
   width: 42px;
@@ -566,8 +553,7 @@ body {
 
 .new-request .states .state-date .box-month .days .day {
   cursor: pointer;
-  color: #5076AA;
-  background-color: #fff;
+  color: #2196F3;
   text-transform: uppercase;
   margin: 5px;
   width: 42px;
@@ -579,8 +565,8 @@ body {
 .new-request .states .state-date .box-month .days .day-current {
   cursor: pointer;
   color: #fff;
-  border: solid 1px #5076AA;
-  background-color: #5076AA;
+  border: solid 1px #2196F3;
+  background-color: #2196F3;
   border-radius: 2px;
   text-transform: uppercase;
   margin: 5px;
@@ -592,7 +578,6 @@ body {
 }
 
 .new-request .states .state-date .box-month .days .day-dummy {
-  border-radius: 2px;
   margin: 5px;
   width: 42px;
   padding: 4px 0;

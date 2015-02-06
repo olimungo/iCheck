@@ -3,15 +3,29 @@
     <div ng-repeat="request in requests">
       <md-whiteframe class="md-whiteframe-z1 item" layout>
         <div class="box-date">
-          <div class="month">{{request.date.month}}</div>
+          <div class="day-label">{{request.date.dayLabel}}</div>
           <div class="day">{{request.date.day}}</div>
-          <div class="year">{{request.date.year}}</div>
+          <div>{{request.date.monthYear}}</div>
         </div>
 
         <div class="info" layout="column">
           <div layout="row">
-            <div class="box" layout="column"><i class="fa fa-server icon-date icon-top"></i> {{request.period}}</div>
-            <div class="box" layout="column"><i class="fa fa-clock-o icon-date icon-top"></i> {{request.time}}</div>
+            <div class="box" layout="column">
+              <md-tooltip>
+                {{request.periodLabel}}
+              </md-tooltip>
+
+              <i class="fa fa-sun-o icon-date icon-top" ng-if="request.isMorning"></i>
+              <i class="fa fa-moon-o icon-date icon-top" ng-if="!request.isMorning"></i>
+              <div ng-if="request.isIn">IN</div>
+              <div ng-if="!request.isIn">OUT</div>
+            </div>
+
+            <div class="box" layout="column">
+              <i class="fa fa-clock-o icon-date icon-top"></i>
+              {{request.time}}
+            </div>
+
             <md-button class="md-primary">
               <div class="box" ng-if="request.reply=='RE'"><i class="fa fa-comments icon-top"></i></div>
               <div class="box" ng-if="request.reply!='RE'"><i class="fa fa-comment icon-top"></i></div>
@@ -30,51 +44,3 @@
     <i class="fa fa-plus add-icon"></i>
   </md-button>
 </div>
-
-<!--div class="requests" layout="column" ng-controller="ServiceProvidersRequestsCtrl">
-  <md-content>
-    <div class="list">
-      <div class="item" ng-repeat="request in requests">
-        <div class="header">
-          <i class="fa fa-comments icon" ng-if="request.reply=='RE'"></i>
-          <i class="fa fa-comment icon" ng-if="request.reply!='RE'"></i>
-
-          <div class="badge accepted" ng-if="request.reply=='AC'">ACCEPTED</div>
-          <div class="badge refused" ng-if="request.reply=='RE'">REFUSED</div>
-          <div class="badge pending" ng-if="request.reply=='PE'">PENDING</div>
-        </div>
-
-        <div layout="row">
-          <md-input-container flex>
-            <label>Date</label>
-            <input ng-model="request.date" disabled>
-          </md-input-container>
-
-          <md-input-container flex>
-            <label>Period</label>
-            <input ng-model="request.period" disabled>
-          </md-input-container>
-
-          <md-input-container flex>
-            <label>Time</label>
-            <input ng-model="request.time" disabled>
-          </md-input-container>
-        </div>
-
-        <md-input-container flex class="remove-padding-bottom">
-          <label>Comment</label>
-          <textarea ng-model="request.comment" disabled></textarea>
-        </md-input-container>
-
-        <md-input-container flex class="remove-padding-bottom" ng-if="request.reason!=null">
-          <label>Reason</label>
-          <textarea ng-model="request.reason" disabled></textarea>
-        </md-input-container>
-      </div>
-    </div>
-  </md-content>
-
-  <md-button class="md-warn md-fab add-button" ng-click="add()" aria-label="Add a request">
-    <i class="fa fa-plus add-icon"></i>
-  </md-button>
-</div-->
