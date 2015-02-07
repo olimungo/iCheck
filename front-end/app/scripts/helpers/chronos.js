@@ -2,20 +2,32 @@
 
 angular.module('frontOfficeApp')
 .factory('chronos',  function () {
-  // Construct a calendar array of 6 weeks.
+  function _getDayLabel (date) {
+    var daysLabels = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+
+    return daysLabels[date.getDay()];
+  }
+
+  // Construct a calendar array of 5 or 6 weeks.
   // Monday being the first day of the week.
-  function _getMonth (date) {
+  function _getMonth (date, step) {
+    step = step || 0;
+
+    // Setting the day of the month to the 5th because setMonth adds or removes
+    // more or less 30 days depending on the case. For example, setting a date to
+    // 31/03/2015 and removing 1 month gives a result of 03/03/2015.
+    date.setDate(5);
+    date.setMonth(date.getMonth() + step);
+
     var result = {
-      date: date,
-      monthLabel: '',
-      dayNames: [ 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      shortDayLabels: [ 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      monthYear: '',
       weeks: []
     },
     monthLabels = [
       'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
       'October', 'November', 'December'
-    ],
-    daysLabels = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+    ];
 
     if (date instanceof Date) {
       var month = date.getMonth(),
@@ -26,7 +38,7 @@ angular.module('frontOfficeApp')
           now = new Date(),
           i, j, l, week, day;
 
-      result.monthLabel = monthLabels[month] + ' ' + year;
+      result.monthYear = monthLabels[month] + ' ' + year;
 
       // Set Sunday as the 7th day of the week instead of 0.
       if (firstDayOfWeek === 0) {
@@ -79,6 +91,7 @@ angular.module('frontOfficeApp')
   }
 
   return {
-    getMonth: _getMonth
+    getMonth: _getMonth,
+    getDayLabel: _getDayLabel
   };
 });

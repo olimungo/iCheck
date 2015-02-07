@@ -11,24 +11,20 @@ angular.module('frontOfficeApp')
     date = new Date();
   }
 
-  // Setting the day of the month to the 5th because setMonth adds or removes
-  // more or less 30 days depending on the case. For example, setting a date to
-  // 31/03/2015 and removing 1 month gives a result of 03/03/2015.
-  date.setDate(5);
-
   $scope.month = chronos.getMonth(date);
 
   newRequest.checkDisableNextForDate();
 
   $scope.setDate = function (day) {
+    date = new Date(date.getFullYear(), date.getMonth(), day.num);
+
     $scope.selectedDay = day.num;
-    newRequest.setDate(new Date($scope.month.date.getFullYear(), $scope.month.date.getMonth(), day.num));
+    $scope.selectedDayLabel = newRequest.getDayLabel(date);
+    newRequest.setDate(date);
   }
 
   $scope.navigate = function (step) {
     $scope.selectedDay = null;
-    $scope.month.date.setMonth($scope.month.date.getMonth() + step);
-
-    $scope.month = chronos.getMonth($scope.month.date);
+    $scope.month = chronos.getMonth($scope.month.date, step);
   };
 });

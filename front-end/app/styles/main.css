@@ -410,6 +410,7 @@ body {
 
 .requests .info {
   color: #5076AA;
+  text-transform: uppercase;
 }
 
 .requests .item .info .box {

@@ -6,12 +6,12 @@
 
         <div flex></div>
 
-        <md-button aria-label="Logout the application" ng-click="showMenu()">
+        <md-button aria-label="Logout the application" ng-click="showMenu($event)">
           <i class="fa fa-ellipsis-v menu-icon"></i>
         </md-button>
 
         <div class="menu md-whiteframe-z1" ng-class="{'visible': menuVisible}">
-          <md-button class="button" layout="row" layout-align="start center" ng-click="logOut()">
+          <md-button class="button" layout="row" layout-align="start center" ng-click="logOut($event)">
             <i class="fa fa-sign-out sign-out-icon"></i> Log out
           </md-button>
         </div>
