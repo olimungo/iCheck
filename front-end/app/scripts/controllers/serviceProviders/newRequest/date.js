@@ -19,12 +19,13 @@ angular.module('frontOfficeApp')
     date = new Date(date.getFullYear(), date.getMonth(), day.num);
 
     $scope.selectedDay = day.num;
-    $scope.selectedDayLabel = newRequest.getDayLabel(date);
+    $scope.selectedDayLabel = chronos.getDayLabel(date);
     newRequest.setDate(date);
   }
 
   $scope.navigate = function (step) {
     $scope.selectedDay = null;
-    $scope.month = chronos.getMonth($scope.month.date, step);
+    $scope.selectedDayLabel = null;
+    $scope.month = chronos.getMonth(date, step);
   };
 });

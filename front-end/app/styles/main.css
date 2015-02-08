@@ -455,7 +455,7 @@ body {
 
 .new-request .content {
   width: 600px;
-  height: 470px;
+  height: 500px;
 }
 
 .new-request .header {
@@ -497,8 +497,6 @@ body {
 
 .new-request .states .state-date .navigator {
   margin: 10px;
-  padding: 25px;
-  color: #2196F3;
 }
 
 .new-request .states .state-date .box-month {
@@ -518,30 +516,32 @@ body {
   color: #fff;
 }
 
-.new-request .states .state-date .box-month .header-month .label-month {
-  text-transform: uppercase;
-  font-size: 20px;
+.new-request .states .state-date .box-month .header-month .label-day {
+  font-size: 15px;
   margin-top: 10px;
+  height: 15px;
+}
+
+.new-request .states .state-date .box-month .days {
+  padding: 20px 10px 5px 10px;
 }
 
 .new-request .states .state-date .box-month .header-month .day-selected-header {
-  background-color: #fff;
-  color: #2196F3;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
+  font-size: 50px;
   text-align: center;
-  vertical-align: middle;
-  padding: 18px 0 0 0;
-  margin: 10px 0 20px 0;
+  height: 70px;
+  padding: 10px;
+}
+
+.new-request .states .state-date .box-month .header-month .month-year {
+  margin-bottom: 10px;
 }
 
 .new-request .states .state-date .box-month .header-month .hide {
   visibility: hidden;
 }
 
-.new-request .states .state-date .box-month .header-month .day-of-week {
+.new-request .states .state-date .box-month .day-of-week {
   color: #2196F3;
   text-transform: uppercase;
   margin: 5px;
