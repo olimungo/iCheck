@@ -701,7 +701,7 @@ body {
   width: 130px;
   height: 130px;
   margin: 30px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .dialog .states .state-validate .box .icon-top {
@@ -721,6 +721,6 @@ body {
   border-bottom: solid 1px #8DBCEA;
   width: 365px;
   height: 150px;
-  color: #888;
+  font-size: 18px;
 }
 
