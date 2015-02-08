@@ -2,10 +2,13 @@
 
 angular.module('frontOfficeApp')
 .controller('ServiceProvidersNewRequestDateCtrl', function ($scope, chronos, newRequest) {
-  var date = newRequest.getDate();
+  var date = newRequest.getDate(),
+      selectedDate = null;
 
   if (date !== null) {
-    $scope.selectedDay = date.getDate();
+    selectedDate = new Date(date);
+    $scope.selectedDay = selectedDate.getDate();
+    $scope.selectedDayLabel = chronos.getDayLabel(date);
   } else {
     $scope.selectedDay = null;
     date = new Date();
@@ -16,16 +19,22 @@ angular.module('frontOfficeApp')
   newRequest.checkDisableNextForDate();
 
   $scope.setDate = function (day) {
-    date = new Date(date.getFullYear(), date.getMonth(), day.num);
+    selectedDate = new Date(date.getFullYear(), date.getMonth(), day.num);
 
     $scope.selectedDay = day.num;
     $scope.selectedDayLabel = chronos.getDayLabel(date);
-    newRequest.setDate(date);
+
+    newRequest.setDate(selectedDate);
   }
 
   $scope.navigate = function (step) {
     $scope.selectedDay = null;
     $scope.selectedDayLabel = null;
     $scope.month = chronos.getMonth(date, step);
+
+    if (selectedDate !== null && date.getMonth() == selectedDate.getMonth()) {
+      $scope.selectedDay = selectedDate.getDate();
+      $scope.selectedDayLabel = chronos.getDayLabel(selectedDate);
+    }
   };
 });

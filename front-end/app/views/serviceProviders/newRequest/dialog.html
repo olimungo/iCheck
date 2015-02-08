@@ -1,4 +1,4 @@
-<md-dialog class="new-request" ng-controller="ServiceProvidersNewRequestCtrl">
+<md-dialog class="dialog" ng-controller="ServiceProvidersDialogCtrl">
   <md-content class="content">
     <div class="header" layout="row" layout-align="start center">
       <div class="title" layout="row" ng-if="currentWizardState==WIZARD_STEPS.DATE">
@@ -42,7 +42,7 @@
   </md-content>
 
   <div class="md-actions" layout="row">
-    <md-button ng-click="answer('not useful')">
+    <md-button ng-click="answer('cancel')">
      CANCEL
     </md-button>
 
@@ -57,7 +57,7 @@
       NEXT&nbsp;&nbsp;<i class="fa fa-chevron-right"></i>
     </md-button>
 
-    <md-button ng-click="create()" class="md-primary fixed-button-width" ng-show="currentWizardState == WIZARD_STEPS.VALIDATE" style="color:green;">
+    <md-button ng-click="answer('create')" class="md-primary fixed-button-width" ng-show="currentWizardState == WIZARD_STEPS.VALIDATE" style="color:green;">
       VALIDATE&nbsp;&nbsp;<i class="fa fa-check"></i>
     </md-button>
   </div>

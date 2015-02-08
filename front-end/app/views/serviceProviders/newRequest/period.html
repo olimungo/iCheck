@@ -1,11 +1,27 @@
-<div class="state-period" layout="row" layout-align="center center" ng-controller="ServiceProvidersNewRequestPeriodCtrl">
-  <md-radio-group ng-model="period">
-    <md-radio-button value="t1" aria-label="Morning in" ng-click="setPeriod('t1')">Morning in</md-radio-button>
-    <md-radio-button value="t2" aria-label="Morning out" ng-click="setPeriod('t2')">Morning out</md-radio-button>
+<div class="state-period" ng-controller="ServiceProvidersNewRequestPeriodCtrl">
+  <md-radio-group ng-model="period" layout="row" layout-align="space-around center">
+    <div class="box" layout="column">
+      <i class="fa fa-sun-o"></i>
 
-    <div class="divider"></div>
+      <md-radio-button class="option" value="t1" aria-label="Morning in" ng-click="setPeriod('t1')">
+        <div class="label">IN</div>
+      </md-radio-button>
 
-    <md-radio-button value="t3" aria-label="Afternoon in" ng-click="setPeriod('t3')">Afternoon in</md-radio-button>
-    <md-radio-button value="t4" aria-label="Afternoon out" ng-click="setPeriod('t4')">Afternoon out</md-radio-button>
+      <md-radio-button class="option" value="t2" aria-label="Morning out" ng-click="setPeriod('t2')">
+        <div class="label">OUT</div>
+      </md-radio-button>
+    </div>
+
+    <div class="box" layout="column">
+      <i class="fa fa-moon-o"></i>
+
+      <md-radio-button class="option" value="t4" aria-label="Afternoon in" ng-click="setPeriod('t3')">
+        <div class="label">IN</div>
+      </md-radio-button>
+
+      <md-radio-button class="option" value="t5" aria-label="Afternoon out" ng-click="setPeriod('t4')">
+        <div class="label">OUT</div>
+      </md-radio-button>
+    </div>
   </md-radio-group>
 </div>

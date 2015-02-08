@@ -453,12 +453,12 @@ body {
 ** ServiceProviders' new request
 */
 
-.new-request .content {
+.dialog .content {
   width: 600px;
   height: 500px;
 }
 
-.new-request .header {
+.dialog .header {
   position: absolute;
   width: 100%;
   top: 0;
@@ -468,13 +468,13 @@ body {
   color: #fff;
 }
 
-.new-request .header .title {
+.dialog .header .title {
   text-transform: uppercase;
   font-size: 20px;
   margin-left: 5px;
 }
 
-.new-request .header .subtitle {
+.dialog .header .subtitle {
   position: absolute;
   right: 0;
   margin-right: 25px;
@@ -483,7 +483,7 @@ body {
   font-size: 14px;
 }
 
-.new-request .fixed-button-width {
+.dialog .fixed-button-width {
   width: 130px;
 }
 
@@ -491,57 +491,57 @@ body {
 ** ServiceProviders' new request: DATE
 */
 
-.new-request .states .state-date {
+.dialog .states .state-date {
   margin-top: 60px;
 }
 
-.new-request .states .state-date .navigator {
+.dialog .states .state-date .navigator {
   margin: 10px;
 }
 
-.new-request .states .state-date .box-month {
+.dialog .states .state-date .box-month {
   border: solid 1px #2196F3;
   border-radius: 2px;
 }
 
-.new-request .states .state-date .box-month .header-month {
+.dialog .states .state-date .box-month .header-month {
   padding: 10px;
   background-color: #2196F3;
   color: #fff;
 }
 
-.new-request .states .state-date .box-month .header-month {
+.dialog .states .state-date .box-month .header-month {
   padding: 5px;
   background-color: #2196F3;
   color: #fff;
 }
 
-.new-request .states .state-date .box-month .header-month .label-day {
+.dialog .states .state-date .box-month .header-month .label-day {
   font-size: 15px;
   margin-top: 10px;
   height: 15px;
 }
 
-.new-request .states .state-date .box-month .days {
+.dialog .states .state-date .box-month .days {
   padding: 20px 10px 5px 10px;
 }
 
-.new-request .states .state-date .box-month .header-month .day-selected-header {
+.dialog .states .state-date .box-month .header-month .day-selected-header {
   font-size: 50px;
   text-align: center;
   height: 70px;
   padding: 10px;
 }
 
-.new-request .states .state-date .box-month .header-month .month-year {
+.dialog .states .state-date .box-month .header-month .month-year {
   margin-bottom: 10px;
 }
 
-.new-request .states .state-date .box-month .header-month .hide {
+.dialog .states .state-date .box-month .header-month .hide {
   visibility: hidden;
 }
 
-.new-request .states .state-date .box-month .day-of-week {
+.dialog .states .state-date .box-month .day-of-week {
   color: #2196F3;
   text-transform: uppercase;
   margin: 5px;
@@ -552,7 +552,7 @@ body {
   text-align: center;
 }
 
-.new-request .states .state-date .box-month .days .day {
+.dialog .states .state-date .box-month .days .day {
   cursor: pointer;
   color: #2196F3;
   text-transform: uppercase;
@@ -563,7 +563,7 @@ body {
   text-align: center;
 }
 
-.new-request .states .state-date .box-month .days .day-current {
+.dialog .states .state-date .box-month .days .day-current {
   cursor: pointer;
   color: #fff;
   border: solid 1px #2196F3;
@@ -578,7 +578,7 @@ body {
   text-align: center;
 }
 
-.new-request .states .state-date .box-month .days .day-dummy {
+.dialog .states .state-date .box-month .days .day-dummy {
   margin: 5px;
   width: 42px;
   padding: 4px 0;
@@ -586,8 +586,8 @@ body {
   text-align: center;
 }
 
-.new-request .states .state-date .box-month .days .day:hover,
-.new-request .states .state-date .box-month .days .day-current:hover {
+.dialog .states .state-date .box-month .days .day:hover,
+.dialog .states .state-date .box-month .days .day-current:hover {
   transform: scale(1.6);
   transition-duration: 100ms;
   transition-timing-function: ease-out;
@@ -597,32 +597,59 @@ body {
 ** ServiceProviders' new request: PERIOD
 */
 
-.new-request .states .state-period {
+.dialog .states .state-period {
   margin-top: 130px;
-  color: #5076AA;
 }
 
-.new-request .states .state-period .divider {
+.dialog .states .state-period .divider {
   border-bottom: solid 1px #ddd;
   margin: 30px 0;
   width: 100%;
 }
 
+.dialog .states .state-period .box {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  padding: 15px;
+  color: #2196F3;
+  border: solid 1px #2196F3;
+  border-radius: 2px;
+}
+
+.dialog .states .state-period .box .fa {
+  font-size: 40px;
+  margin: 0 0 10px 5px;
+}
+
+.dialog .states .state-period .box md-radio-button.md-default-theme .md-off {
+  border-color: #2196F3;
+}
+
+.dialog .states .state-period .box .option {
+  margin: 10px 0 0 10px;
+}
+
+.dialog .states .state-period .box .label {
+  margin-top: 4px;
+}
+
+
 /*
 ** ServiceProviders' new request: TIME
 */
 
-.new-request .states .state-time {
+.dialog .states .state-time {
   margin-top: 80px;
-  color: #5076AA;
+  color: #2196F3;
 }
 
-.new-request .states .state-time .unit {
+.dialog .states .state-time .unit {
   margin: 10px;
 }
 
-.new-request .states .state-time .unit .digit {
-  border: solid 1px #5076AA;
+.dialog .states .state-time .unit .digit {
+  border: solid 1px #2196F3;
   width: 40px;
   height: 50px;
   text-align: center;
@@ -632,16 +659,16 @@ body {
   font-size: 25px;
 }
 
-.new-request .states .state-time .separator {
+.dialog .states .state-time .separator {
   font-size: 30px;
   font-weight: 600;
 }
 
-.new-request .states .state-time .message {
+.dialog .states .state-time .message {
   margin-bottom: 30px;
 }
 
-.new-request .states .state-time .min-max {
+.dialog .states .state-time .min-max {
   margin: 5px;
   font-size: 16px;
   text-align: center;
@@ -652,42 +679,42 @@ body {
 ** ServiceProviders' new request: COMMENT
 */
 
-.new-request .states .state-comment {
+.dialog .states .state-comment {
   margin-top: 100px;
 }
 
-.new-request .states .state-comment .comment {
+.dialog .states .state-comment .comment {
   width: 450px;
-  color: #5076AA;
+  color: #2196F3;
 }
 
 /*
 ** ServiceProviders' new request: VALIDE
 */
 
-.new-request .states .state-validate {
+.dialog .states .state-validate {
   margin-top: 40px;
-  color: #5076AA;
+  color: #2196F3;
 }
 
-.new-request .states .state-validate .box {
+.dialog .states .state-validate .box {
   width: 130px;
   height: 130px;
   margin: 30px;
   font-size: 20px;
 }
 
-.new-request .states .state-validate .box .icon-top {
-  font-size: 40px;
+.dialog .states .state-validate .box .icon-top {
+  font-size: 35px;
   margin-bottom: 20px;
 }
 
-.new-request .states .state-validate .icon-comment {
+.dialog .states .state-validate .icon-comment {
   margin: 0 25px 0 75px;
   font-size: 40px;
 }
 
-.new-request .states .state-validate .comment {
+.dialog .states .state-validate .comment {
   border: none;
   resize: none;
   margin-top: 10px;

@@ -12,6 +12,7 @@ angular.module('frontOfficeApp')
       $mdDialog.cancel();
     };
     $scope.answer = function(answer) {
+      console.log(answer)
       $mdDialog.hide(answer);
     };
   }

@@ -16,12 +16,13 @@ angular.module('frontOfficeApp')
   });
 
   $scope.showMenu = function ($event) {
-    $scope.menuVisible = true;
     $event.stopPropagation();
+    $scope.menuVisible = true;
   };
 
   $scope.logOut = function ($event) {
-    $scope.menuVisible = false;
     $event.stopPropagation();
+    $scope.menuVisible = false;
+    $location.path('/login');
   }
 });

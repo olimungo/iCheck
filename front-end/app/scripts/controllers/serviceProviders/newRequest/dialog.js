@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontOfficeApp')
-.controller('ServiceProvidersNewRequestCtrl', function ($scope, newRequest) {
+.controller('ServiceProvidersDialogCtrl', function ($scope, newRequest) {
   newRequest.create();
 
   $scope.WIZARD_STEPS = newRequest.WIZARD_STEPS;
