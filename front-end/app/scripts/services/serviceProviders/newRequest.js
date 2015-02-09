@@ -10,7 +10,7 @@ angular.module('frontOfficeApp')
     VALIDATE: 5
   };
 
-  var _request;
+  var _request = null;
 
   function _create () {
     _request = {

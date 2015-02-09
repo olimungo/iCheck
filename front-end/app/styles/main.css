@@ -151,7 +151,7 @@ body {
 .home .clock-date {
   color: #1976D2;
   font-size: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
@@ -255,114 +255,160 @@ body {
 ** ServiceProviders' WEEK tab
 */
 
-.week .week-panel li {
-  display: inline-block;
-  width: 50px;
+.week {
+  margin-top: 40px;
 }
 
-.week .week-panel li p {
-  line-height: 1;
+.week .box-month {
+  border: solid 1px #2196F3;
+  border-radius: 2px;
 }
 
-.week .week-panel .navigator {
-  vertical-align: top;
-  margin: 80px 15px 0 15px
+.week .box-month .header-month {
+  padding: 15px;
+  background-color: #2196F3;
+  color: #fff;
+  height: 120px;
 }
 
-.week .week-panel .centered {
+.week .box-month .days {
+  padding: 20px 10px 5px 10px;
+  background-color: #fff;
+}
+
+.week .box-month .header-month .hide {
+  visibility: hidden;
+}
+
+.week .box-month .day-of-week {
+  color: #2196F3;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding-top: 2px;
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
 }
 
-.week .date-range {
-  color: #1976D2;
-  font-size: 22px;
-  margin-top: 50px;
-}
-
-.week .week-panel .day-label {
-  font-size: 12px;
-  margin: 2px;
-  padding: 4px 2px 2px 2px;
-  color: #1976D2;
-  background-color: #fff;
-  border-radius: 1px;
-}
-
-.week .week-panel .day {
+.week .box-month .days .day {
+  color: #2196F3;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
   font-size: 14px;
-  font-weight: bold;
-  margin: 2px;
-  padding: 4px 2px 2px 2px;
-  color: #1976D2;
-  background-color: #fff;
-  border-radius: 1px;
+  text-align: center;
 }
 
-.week .week-panel .day-of-week {
+.week .box-month .days .day-current {
+  color: #fff;
+  border: solid 1px #2196F3;
+  background-color: #2196F3;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
   font-size: 14px;
-  margin: 2px;
-  padding: 4px 2px 2px 2px;
-  color: #1976D2;
-  background-color: #fff;
-  border-radius: 1px;
+  font-weight: 600;
+  text-align: center;
 }
 
-.week .week-panel .day-of-week:hover {
-  cursor: default;
-  transform: scale(1.3);
-  transition-duration: 100ms;
-  transition-timing-function: ease-out;
-  background-color: #fafafa;
-  border-radius: 3px;
+.week .box-month .days .day-dummy {
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  text-align: center;
 }
 
-.week .week-panel .total {
-  font-weight: bold;
-  margin: 2px;
-  padding: 4px 2px 2px 2px;
-  color: #1976D2;
-  background-color: #fff;
-  border-radius: 1px;
-}
-
-.week .border-bottom {
-  margin: 8px;
+.week .box-month .days .worked {
+  border-top: solid 1px #CEE7FB;
+  margin: 0px 10px 0 10px;
+  padding-top: 3px;
+  text-align: center;
+  color: #7CCB2D;
 }
 
 /*
 ** ServiceProviders' MONTH tab
 */
 
-.month .date-range {
-  color: #1976D2;
-  font-size: 22px;
-  margin: 50px 0 50px 0;
+.month {
+  margin-top: 40px;
 }
 
-.month .day-of-week {
+.month .box-month {
+  border: solid 1px #2196F3;
+  border-radius: 2px;
+}
+
+.month .box-month .header-month {
+  padding: 15px;
+  background-color: #2196F3;
+  color: #fff;
+  height: 120px;
+}
+
+.month .box-month .days {
+  padding: 20px 10px 5px 10px;
+  background-color: #fff;
+}
+
+.month .box-month .header-month .hide {
+  visibility: hidden;
+}
+
+.month .box-month .day-of-week {
+  color: #2196F3;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding-top: 2px;
   font-size: 14px;
   font-weight: 600;
-  height: 25px;
-  width: 40px;
-  margin: 4px;
-  padding: 4px 2px 2px 2px;
-  color: #1976D2;
-  background-color: #fff;
-  border-radius: 2px;
+  text-align: center;
 }
 
-.month .day {
-  font-size: 18px;
-  width: 40px;
-  margin: 4px;
-  padding: 4px 2px 2px 2px;
-  color: #1976D2;
-  background-color: #fff;
-  border-radius: 2px;
+.month .box-month .days .day {
+  color: #2196F3;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  text-align: center;
 }
 
-.month .navigator {
-  margin: 65px 20px 0 20px;
+.month .box-month .days .day-current {
+  color: #fff;
+  border: solid 1px #2196F3;
+  background-color: #2196F3;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.month .box-month .days .day-dummy {
+  margin: 5px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.month .box-month .days .worked {
+  border-top: solid 1px #CEE7FB;
+  margin: 0px 10px 0 10px;
+  padding-top: 3px;
+  text-align: center;
+  color: #7CCB2D;
 }
 
 /*

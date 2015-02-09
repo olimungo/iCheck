@@ -1,27 +1,35 @@
 <div class="week" ng-controller="ServiceProvidersWeekCtrl">
-    <div class="date-range">26/01/2015 <i class="fa fa-chevron-circle-right"></i> 01/02/2015</div>
+  <div class="box-month">
+    <div class="header-month" layout="rows" layout-align="space-between center">
+        <md-button ng-click="navigate(-1)" aria-label="Go to previous month"><i class="fa fa-chevron-left"></i></md-button>
 
-    <ul class="week-panel">
-      <li class="navigator">
-        <md-button class="md-raised md-primary" aria-label="Previous week"><i class="fa fa-chevron-left"></i></md-button>
-        <!--button type="button" class="btn btn-default" ng-click="changeWeek(-1)"><span class="glyphicon glyphicon-chevron-left"></span></button-->
-      </li>
+        <div class="month-year">{{month.monthYear}}</div>
 
-      <li class="centered" ng-repeat="day in week">
-        <p class="centered day-label">{{day.ui.shortDayLabel}}</p>
-        <p class="centered day">{{day.ui.shortDateLabel}}</p>
-        <p class="border-bottom"></p>
-        <p class="centered day-of-week" ng-click="editTime(day, 't1', day.t1)">{{day.ui.t1 || '-'}}</p>
-        <p class="centered day-of-week" ng-click="editTime(day, 't2', day.t2)">{{day.ui.t2 || '-'}}</p>
-        <p class="centered day-of-week" ng-click="editTime(day, 't3', day.t3)">{{day.ui.t3 || '-'}}</p>
-        <p class="centered day-of-week" ng-click="editTime(day, 't4', day.t4)">{{day.ui.t4 || '-'}}</p>
-        <p class="border-bottom"></p>
-        <p class="centered total">{{day.ui.total || '-'}}</p>
-      </li>
+        <md-button ng-click="navigate(1)" aria-label="Go to next month"><i class="fa fa-chevron-right"></i></md-button>
+    </div>
 
-      <li class="navigator">
-        <md-button class="md-raised md-primary" aria-label="Next week"><i class="fa fa-chevron-right"></i></md-button>
-        <!--button type="button" class="btn btn-default" ng-click="changeWeek(1)"><span class="glyphicon glyphicon-chevron-right"></span></button-->
-      </li>
-    </ul>
+    <div class="days">
+      <div layout="row" layout-align="center center">
+        <div ng-repeat="day in month.shortDayLabels">
+          <div class="day-of-week">{{day}}</div>
+        </div>
+      </div>
+
+      <div class="days" layout="column" layout-align="center center">
+        <div ng-repeat="week in month.weeks">
+          <div layout="row">
+            <div ng-repeat="day in week track by $index">
+              <div ng-class="{'day': !day.current, 'day-current': day.current}" ng-click="setDate(day)" ng-if="day.num!=0">
+                <div>{{day.num}}</div>
+                <div class="worked">W</div>
+              </div>
+
+              <div class="day-dummy" ng-show="day.num==0">&nbsp;</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
