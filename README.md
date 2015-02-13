@@ -1,5 +1,5 @@
 # nodeMongo
-Example of project running on nodejs and using mongoDB as persistence layer
+Timesheets application running on nodejs and using mongoDB as persistence layer.
 
 **Back-end technologies**: nodejs, express, mongoDB
 
