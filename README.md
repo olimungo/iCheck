@@ -5,4 +5,4 @@ Timesheets application running on nodejs and using mongoDB as persistence layer.
 
 **Front-end technologies**: angularjs, material-angular
 
-**Development tools**: npm, grunt, bower, yeoman
+**Development tools**: npm, gulp, bower, yeoman
