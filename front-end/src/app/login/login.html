@@ -1,0 +1,21 @@
+<div class="login" layout="column" layout-align="center center">
+  <i class="fa fa-clock-o"></i>
+
+  <div class="clock-date">{{ clock | date:'d MMMM yyyy'}}</div>
+  <div class="clock-hour">{{ clock | date:'H:mm'}}</div>
+
+  <div class="credentials" layout="column">
+    <md-input-container flex>
+      <label>Login</label>
+      <input ng-model="user.login">
+    </md-input-container>
+
+    <md-input-container flex>
+      <label>Password</label>
+      <input ng-model="user.password">
+    </md-input-container>
+
+    <md-button class="md-raised md-primary button" ng-click="home()">Log in</md-button>
+  </div>
+</div>
+

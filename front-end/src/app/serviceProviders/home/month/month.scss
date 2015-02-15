@@ -1,0 +1,75 @@
+.month {
+  margin-top: 40px;
+}
+
+.month .box-month {
+  border: solid 1px #2196F3;
+  border-radius: 2px;
+}
+
+.month .box-month .header-month {
+  padding: 15px;
+  background-color: #2196F3;
+  color: #fff;
+  height: 70px;
+}
+
+.month .box-month .days {
+  padding: 10px 10px 5px 10px;
+  background-color: #fff;
+}
+
+.month .box-month .header-month .hide {
+  visibility: hidden;
+}
+
+.month .box-month .day-of-week {
+  color: #2196F3;
+  text-transform: uppercase;
+  margin: 2px;
+  width: 42px;
+  padding-top: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.month .box-month .days .day {
+  color: #2196F3;
+  text-transform: uppercase;
+  margin: 2px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.month .box-month .days .day-current {
+  color: #fff;
+  border: solid 1px #2196F3;
+  background-color: #2196F3;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin: 2px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.month .box-month .days .day-dummy {
+  margin: 2px;
+  width: 42px;
+  padding: 4px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.month .box-month .days .worked {
+  border-top: solid 1px #CEE7FB;
+  margin: 0px 10px 0 10px;
+  padding-top: 3px;
+  text-align: center;
+  color: #7CCB2D;
+}

@@ -1,0 +1,54 @@
+<div class="home" layout="column">
+  <md-toolbar class="md-primary">
+    <div class="md-toolbar-tools" layout="row">
+      <i class="fa fa-clock-o clock-icon"></i>
+
+      <div class="title">iCheck</div>
+
+      <div flex></div>
+
+      <md-button aria-label="Logout the application" ng-click="showMenu($event)">
+        <i class="fa fa-ellipsis-v menu-icon"></i>
+      </md-button>
+
+      <div class="menu md-whiteframe-z1" ng-class="{'visible': menuVisible}">
+        <md-button class="button" layout="row" layout-align="start center" ng-click="logOut($event)">
+          <i class="fa fa-sign-out sign-out-icon"></i> Log out
+        </md-button>
+      </div>
+    </div>
+  </md-toolbar>
+
+  <md-content>
+    <div class="tabs">
+      <md-tabs class="md-hue-2" md-selected="0">
+        <md-tab label="Check">
+          <div class="tab" layout="column" layout-fill layout-align="start center">
+            <div ng-include="'app/serviceProviders/home/check/check.html'"></div>
+          </div>
+        </md-tab>
+
+        <md-tab label="Week">
+          <div class="tab" layout="column" layout-fill layout-align="start center">
+            <div ng-include="'app/serviceProviders/home/week/week.html'"></div>
+          </div>
+        </md-tab>
+
+        <md-tab label="Month">
+          <div class="tab" layout="column" layout-fill layout-align="start center">
+            <div ng-include="'app/serviceProviders/home/month/month.html'"></div>
+          </div>
+        </md-tab>
+
+        <md-tab label="Requests">
+          <div class="tab" layout="column" layout-fill layout-align="start center">
+            <div ng-include="'views/serviceProviders/requests.html'"></div>
+          </div>
+        </md-tab>
+      </md-tabs>
+    </div>
+  </md-content>
+</div>
+
+<footer id="footer"></footer>
+

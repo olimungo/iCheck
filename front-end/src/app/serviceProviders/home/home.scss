@@ -1,0 +1,46 @@
+.home .clock-icon {
+  font-size: 35px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.home .title {
+  font-size: 24px;
+  font-weight: 200;
+  color: #fff;
+}
+
+.home .menu-icon {
+  font-size: 25px;
+  width: 40px;
+}
+
+.home .menu {
+  position: absolute;
+  right: 10px;
+  top:  50px;
+  width: 160px;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity .25s ease-in;
+}
+
+.home .menu.visible {
+  opacity: 1;
+}
+
+.home .menu .button {
+  color: #5076AA;
+  width: 100%;
+}
+
+.home .menu .sign-out-icon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.home md-content {
+  background-color: transparent;
+}
