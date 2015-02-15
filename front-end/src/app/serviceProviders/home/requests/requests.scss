@@ -1,0 +1,82 @@
+.requests {
+  margin-top: 0px;
+}
+
+.requests md-content {
+  /* height: 750px; */
+  overflow: auto;
+}
+
+.requests .add-button {
+  position: fixed;
+  bottom: 23px;
+  right: 35px;
+}
+
+.requests .item {
+  cursor: pointer;
+  margin: 15px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.requests .box-date {
+  background-color: #2196F3;
+  color: #BBDEFB;
+  width: 150px;
+  height:113px;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.requests .item .box-date .day-label {
+
+}
+
+.requests .item .box-date .day {
+  font-size: 40px;
+  color: #fff;
+}
+
+.requests .info {
+  color: #5076AA;
+  text-transform: uppercase;
+}
+
+.requests .item .info .box {
+  margin: 15px 30px;
+  text-align: center;
+  font-size: 14px;
+  width: 30px;
+}
+
+.requests .item .info .box .icon-top {
+  font-size: 25px;
+  padding: 3px;
+  margin-bottom: 5px;
+  color: #5076AA;
+}
+
+.requests .item .info .status {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  height: 30px;
+  padding-top: 10px;
+  color: #FFF;
+}
+
+.requests .item .info .status.accepted {
+  background-color: #74D348;
+}
+
+.requests .item .info .status.refused {
+  background-color: #E78787;
+}
+
+.requests .item .info .status.pending {
+  background-color: #ccc;
+}
